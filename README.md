@@ -11,6 +11,7 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 | [Torrentio](https://www.reddit.com/r/StremioAddons/comments/fkolp1/remote_addon_torrentio_for_stremio_must_read/) | [settings](https://torrentio.strem.fun/) - [manifest](https://torrentio.strem.fun/manifest.json) | All | Yes |
 | [Jackett](https://www.reddit.com/r/StremioAddons/comments/ahble7/local_addon_jackett_for_stremio/) | available with [PMS](/PimpMyStremio.md) | All | No |
 | [Torrentio Lite](https://www.reddit.com/r/StremioAddons/comments/m02658/remote_addon_torrentio_lite_for_stremio/) | [settings](https://torrentio.strem.fun/lite/) - [manifest](https://torrentio.strem.fun/lite/manifest.json) | All | Yes |
+| [ThePirateBay+](https://www.reddit.com/r/StremioAddons/comments/axj2es/news_why_use_thepiratebay_addon_over_piratebay/) | [manifest](https://thepiratebay-plus.strem.fun/manifest.json) | All | Yes |
 
 ---
 
