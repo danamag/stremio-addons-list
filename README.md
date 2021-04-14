@@ -134,6 +134,7 @@ _Important: some streams may work and some may not, you can never be sure with I
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | [XNXX](https://www.reddit.com/r/StremioAddons/comments/fuxf1e/remote_addon_xnxx_porn_for_stremio/) | [manifest](https://xnxx.unlimited-fun.xyz/manifest.json) | En | Yes | |
 | [Porn+](https://www.reddit.com/r/StremioAddons/comments/b2x9yd/remote_addon_porn_for_stremio/) | [manifest](https://33f53079954e-porn.beamup.dev/manifest.json) | En | Yes | RedTube only |
+| Hanime.tv | [manifest](https://94c8cb9f702d-hanime-tv-addon.baby-beamup.club/manifest.json) | En / Jp | Yes | Hentai |
 
 ---
 
