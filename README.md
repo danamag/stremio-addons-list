@@ -71,9 +71,9 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 
 **Podcasts - HTTP Stream Addons**
 
-| Name  | Link | Language | Remote | Notes |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| [Podcasts for All](https://www.reddit.com/r/StremioAddons/comments/bpcpe1/remote_addon_podcasts_for_all_for_stremio/) | [manifest](https://podcasts-for-all.ga/manifest.json) | All | Yes |  |
+| Name  | Link | Language | Remote |
+| ------------- | ------------- | ------------- | ------------- |
+| [Podcasts for All](https://www.reddit.com/r/StremioAddons/comments/bpcpe1/remote_addon_podcasts_for_all_for_stremio/) | [manifest](https://podcasts-for-all.ga/manifest.json) | All | Yes |
 
 ---
 
