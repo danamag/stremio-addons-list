@@ -23,7 +23,7 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 
 ---
 
-**Movie & TV - HTTP Stream Add-ons**
+**Movie & TV - HTTP Stream Addons**
 
 | Name  | Link | Language | Remote |
 | ------------- | ------------- | ------------- | ------------- |
