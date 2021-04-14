@@ -71,6 +71,26 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 
 ---
 
+**Cartoons - HTTP Stream Addons**
+
+| Name  | Link | Language | Remote |
+| ------------- | ------------- | ------------- | ------------- |
+| [Watch Cartoon Online](https://www.reddit.com/r/StremioAddons/comments/humiui/remote_addon_watch_cartoon_online_for_stremio/) | [manifest](https://watch-cartoon-online.addon.unlimited-fun.xyz/manifest.json) | En | Yes |
+
+---
+
+**IPTV - HTTP Stream Addons**
+
+_Important: some streams may work and some may not, you can never be sure with IPTV in general_
+
+| Name  | Link | Language | Remote | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| [Indian Live TV](https://www.reddit.com/r/StremioAddons/comments/fjix0c/remote_addon_indian_live_tv/) | [manifest](https://stremio-indian-livetv.vercel.app/manifest.json) | Hi | Yes | some streams require an indian IP |
+| TV en Latino | [manifest](https://c73485b8a7a2-latamtv.baby-beamup.club/manifest.json) | Es | Yes | |
+
+
+---
+
 **Podcasts - HTTP Stream Addons**
 
 | Name  | Link | Language | Remote |
