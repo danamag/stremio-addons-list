@@ -118,6 +118,16 @@ _Important: some streams may work and some may not, you can never be sure with I
 
 ---
 
+**Sports - HTTP Stream Addons**
+
+| Name  | Link | Language | Remote |
+| ------------- | ------------- | ------------- | ------------- |
+| [Maximum Sports](https://www.reddit.com/r/StremioAddons/comments/d515af/remote_addon_maximum_sports_for_stremio/) | [manifest](https://33f53079954e-maxsport.beamup.dev/manifest.json) | En | Yes |
+| [Extra Time](https://www.reddit.com/r/StremioAddons/comments/fpuzg9/remote_addon_extra_time_sports_highlights_for/) | [manifest](https://extra-time.vercel.app/manifest.json) | En | Yes |
+| NBAstreams | [manifest](https://nbastreams.stremio1.repl.co/manifest.json) | En | Yes |
+
+---
+
 **Public Domain Movies**
 
 | Name  | Link | Language | Remote | Notes |
