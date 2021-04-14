@@ -34,14 +34,6 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 
 ---
 
-**Movie & TV - External Links (Subscription) Addons**
-
-| Name  | Link | Language | Remote | Notes |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| WatchHub | [manifest](https://watchhub.strem.io/manifest.json) | All | Yes | official addon, installed by default |
-
----
-
 **Anime - HTTP Stream Addons**
 
 | Name  | Link | Language | Remote | Notes |
@@ -60,3 +52,12 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 | [Torrentio Lite](https://www.reddit.com/r/StremioAddons/comments/m02658/remote_addon_torrentio_lite_for_stremio/) | [settings](https://torrentio.strem.fun/lite/) - [manifest](https://torrentio.strem.fun/lite/manifest.json) | All | Yes | same as "Torrentio", shows only best stream per quality |
 
 ---
+
+**Movie & TV - External Links (Subscription) Addons**
+
+| Name  | Link | Language | Remote | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| WatchHub | [manifest](https://watchhub.strem.io/manifest.json) | All | Yes | official addon, installed by default |
+
+---
+
