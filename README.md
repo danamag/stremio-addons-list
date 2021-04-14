@@ -16,10 +16,10 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 
 **Movie & TV - with Debrid Services**
 
-| Name  | Link | Language | Remote |
-| ------------- | ------------- | ------------- | ------------- |
-| [Torrentio](https://www.reddit.com/r/StremioAddons/comments/fkolp1/remote_addon_torrentio_for_stremio_must_read/) | [settings](https://torrentio.strem.fun/) - [manifest](https://torrentio.strem.fun/manifest.json) | All | Yes |
-| [Deflix](https://www.reddit.com/r/StremioAddons/comments/fl8xc5/remote_addon_debrid_flicks_for_stremio_real_debrid/) | [settings](https://www.deflix.tv/stremio/) | En | Yes |
+| Name  | Link | Language | Remote | Debrid Services |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| [Torrentio](https://www.reddit.com/r/StremioAddons/comments/fkolp1/remote_addon_torrentio_for_stremio_must_read/) | [settings](https://torrentio.strem.fun/) - [manifest](https://torrentio.strem.fun/manifest.json) | All | Yes | RealDebrid, AllDebrid, Premiumize, DebridLink, Put.io |
+| [Deflix](https://www.reddit.com/r/StremioAddons/comments/fl8xc5/remote_addon_debrid_flicks_for_stremio_real_debrid/) | [settings](https://www.deflix.tv/stremio/) | En | Yes | RealDebrid, AllDebrid, Premiumize |
 
 ---
 
