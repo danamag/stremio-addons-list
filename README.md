@@ -140,6 +140,14 @@ _Important: some streams may work and some may not, you can never be sure with I
 
 ---
 
+**Music - HTTP Stream Addons**
+
+| Name  | Link | Language | Remote | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| [IMVDB Music Videos](https://www.reddit.com/r/StremioAddons/comments/bsfej3/remote_addon_imvdb_music_videos_for_stremio/) | [manifest](https://stremio-imvdb.tgr.ax/manifest.json) | En | Yes | |
+
+---
+
 **Porn - HTTP Stream Addons**
 
 | Name  | Link | Language | Remote | Notes |
@@ -157,3 +165,23 @@ _Important: some streams may work and some may not, you can never be sure with I
 | Public Domain Movies | [manifest](https://caching.stremio.net/publicdomainmovies.now.sh/manifest.json) | En | Yes | official addon, installed by default |
 | [Archive.org Movies](https://www.reddit.com/r/StremioAddons/comments/hhxlcl/remote_addon_archiveorg_movies_for_stremio/) | [manifest](https://stremio-archive-org-addon.herokuapp.com/manifest.json) | En | Yes |  |
 
+---
+
+**Metadata / Catalog Addons**
+
+| Name  | Link | Language | Remote | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Cinemeta | [manifest](https://v3-cinemeta.strem.io/manifest.json) | En | Yes | official addon, installed by default |
+| [The Movie Database Addon](https://www.reddit.com/r/StremioAddons/comments/li768k/remote_addon_the_movie_database_addon_for_stremio/) | [settings](https://94c8cb9f702d-tmdb-addon.baby-beamup.club/configure) - [manifest](https://94c8cb9f702d-tmdb-addon.baby-beamup.club/manifest.json) | All | Yes | allows choosing language |
+| [Anime Kitsu](https://www.reddit.com/r/StremioAddons/comments/b9dghx/remote_addon_anime_kitsu_for_stremio/) | [manifest](https://anime-kitsu.strem.fun/manifest.json) | All | Yes | required by many anime addons |
+| [IMDB Catalogs](https://www.reddit.com/r/StremioAddons/comments/b9dghx/remote_addon_anime_kitsu_for_stremio/) | [settings](https://1fe84bc728af-imdb-catalogs.baby-beamup.club/configure) - [manifest](https://1fe84bc728af-imdb-catalogs.baby-beamup.club/manifest.json) | All | Yes | optional setting to add rating posters from RPDB |
+| [RPDB Catalogs](https://www.reddit.com/r/StremioAddons/comments/m02v4s/remote_addon_rpdb_catalogs_for_stremio/) | [settings](https://1fe84bc728af-rpdb.baby-beamup.club/configure) | All | Yes | paid addon, adds posters with ratings |
+| [Top Movies](https://www.reddit.com/r/StremioAddons/comments/fkoqs2/remote_addon_top_movies_for_stremio/) | [manifest](https://stremio-top-movies.deflix.tv/manifest.json) | En | Yes | catalogs for various top lists |
+| [Film Festivals](https://www.reddit.com/r/StremioAddons/comments/hqb7hg/remote_addon_film_festivals_for_stremio/) | [manifest](https://stremio-film-festivals.deflix.tv/manifest.json) | En | Yes | catalogs for various winners of festivals |
+| [Top Seeded Movies by Zooqle](https://www.reddit.com/r/StremioAddons/comments/aqbbak/remote_addon_top_seeded_movies_series_by_zooqle/) | [manifest](https://zooq.baby-supernode.xyz/manifest.json) | En | Yes | |
+| [Catalog Builder](https://www.reddit.com/r/StremioAddons/comments/j6sqi3/remote_addon_catalog_builder_for_stremio/) | [settings](https://stremio.github.io/stremio-catalog-builder/) | En | Yes | build your own personal catalogs |
+| [IMDB Watchlist](https://www.reddit.com/r/StremioAddons/comments/j6sohe/remote_addon_imdb_watchlist_for_stremio/) | [settings](https://1fe84bc728af-imdb-watchlist-setup.baby-beamup.club/configure/) | En | Yes | import your IMDB watchlists as catalogs |
+| [Random Movie](https://www.reddit.com/r/StremioAddons/comments/j6ssbh/remote_addon_random_movie_for_stremio/) | [settings](https://stremio.github.io/stremio-dice/) | En | Yes | find random movies |
+| [Search and Play](https://www.reddit.com/r/StremioAddons/comments/li7i62/remote_addon_search_and_play_for_stremio/) | [manifest](https://searchandplay.unlimited-fun.xyz/manifest.json) | En | Yes | new search features for android |
+| [TMDB Alternatives](https://www.reddit.com/r/StremioAddons/comments/l16jm0/remote_addon_tmdb_alternatives_for_stremio/) | [manifest](https://24dfd6fd4287-stremio-tmdb.baby-beamup.club/manifest.json) | En | Yes | "Cinemeta" rarely gets series lists wrong, this addon solves that |
+| [IMDB ID Search](https://www.reddit.com/r/StremioAddons/comments/em7sqc/remote_addon_imdb_id_search_for_stremio/) | [manifest](https://my-id-search.herokuapp.com/manifest.json) | En | Yes | search movies by imdb id |
