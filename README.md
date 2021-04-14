@@ -77,3 +77,10 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 
 ---
 
+**Public Domain Movies**
+
+| Name  | Link | Language | Remote | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Public Domain Movies | [manifest](https://caching.stremio.net/publicdomainmovies.now.sh/manifest.json) | En | Yes | official addon, installed by default |
+| [Archive.org Movies](https://www.reddit.com/r/StremioAddons/comments/hhxlcl/remote_addon_archiveorg_movies_for_stremio/) | [manifest](https://stremio-archive-org-addon.herokuapp.com/manifest.json) | En | Yes |  |
+
