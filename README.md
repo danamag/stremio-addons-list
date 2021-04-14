@@ -40,6 +40,9 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | [MyAnimeStreams+](https://www.reddit.com/r/StremioAddons/comments/kv2dmk/remote_addon_myanimestreams_for_stremio_sub_and/) | [manifest](https://myanimestreams.herokuapp.com/manifest.json) | En / Jp | Yes | SUB + DUB - requires "Anime Kitsu" addon installed |
 | [123movies](https://www.reddit.com/r/StremioAddons/comments/lppoxz/remote_addon_123movies_for_stremio/) | [manifest](https://movies123-strem.herokuapp.com/manifest.json) | En | Yes | only works with "Cinemeta", does not require "Anime Kitsu" installed |
+| [Anime Brasil](https://www.reddit.com/r/StremioAddons/comments/kukm7e/remote_addon_anime_brasil_for_stremio/) | [manifest](https://94c8cb9f702d-anime-tv-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | has own catalog |
+| Hanime.tv | [manifest](https://94c8cb9f702d-hanime-tv-addon.baby-beamup.club/manifest.json) | En / Jp | Yes | NSFW |
+
 
 ---
 
