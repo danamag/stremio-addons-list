@@ -13,7 +13,7 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 | [Torrentio Lite](https://www.reddit.com/r/StremioAddons/comments/m02658/remote_addon_torrentio_lite_for_stremio/) | [settings](https://torrentio.strem.fun/lite/) - [manifest](https://torrentio.strem.fun/lite/manifest.json) | All | Yes | simpler is sometimes better |
 | [ThePirateBay+](https://www.reddit.com/r/StremioAddons/comments/axj2es/news_why_use_thepiratebay_addon_over_piratebay/) | [manifest](https://thepiratebay-plus.strem.fun/manifest.json) | All | Yes |  |
 | [YTS](https://www.reddit.com/r/StremioAddons/comments/dsv8xa/remote_addon_yts_movie_catalog_for_stremio/) | [manifest](http://stremio-yts.herokuapp.com/manifest.json) | En | Yes | movies only |
-| [Mico-Leão Dublado 🇧🇷](https://www.reddit.com/r/StremioAddons/comments/gixmob/remote_addon_portuguese_brasil_dubbed_movies_for/) | [manifest](https://27a5b2bfe3c0-stremio-brazilian-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | |
+| [Mico-Leão Dublado](https://www.reddit.com/r/StremioAddons/comments/gixmob/remote_addon_portuguese_brasil_dubbed_movies_for/) | [manifest](https://27a5b2bfe3c0-stremio-brazilian-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | |
 | CineTorrent | [manifest](https://150203dd784e-cinetorrent-addon.baby-beamup.club/manifest.json) | Pt / Br / En | Yes | |
 | PelicuLatino | [manifest](https://peliculatino.herokuapp.com/manifest.json) | Es | Yes | |
 | Séptimo arte v3 | [manifest](https://app-septimoarte.herokuapp.com/manifest.json) | Es | Yes | |
