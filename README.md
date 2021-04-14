@@ -187,3 +187,14 @@ _Important: some streams may work and some may not, you can never be sure with I
 | [TMDB Alternatives](https://www.reddit.com/r/StremioAddons/comments/l16jm0/remote_addon_tmdb_alternatives_for_stremio/) | [manifest](https://24dfd6fd4287-stremio-tmdb.baby-beamup.club/manifest.json) | En | Yes | "Cinemeta" rarely gets series lists wrong, this addon solves that |
 | [IMDB ID Search](https://www.reddit.com/r/StremioAddons/comments/em7sqc/remote_addon_imdb_id_search_for_stremio/) | [manifest](https://my-id-search.herokuapp.com/manifest.json) | En | Yes | search movies by imdb id |
 | cinemeta Extend | [manifest](https://9b7c457c25d2-stremio-addon.baby-beamup.club/manifest.json) | En | Yes | more year filters |
+
+---
+
+**Subtitles**
+
+| Name  | Link | Language | Remote | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| OpenSubtitles |  | All | Yes | official addon, installed by default |
+| English Portuguese Br Subtitles | [manifest](https://subtitles-stremio-addon.herokuapp.com/manifest.json) | All | Yes | includes other languages as well |
+| [Titlovi.com Subtitles](https://www.reddit.com/r/StremioAddons/comments/lpp6ic/remote_addon_titlovicom_for_stremio/) | [manifest](https://stremio-titlovi-com.herokuapp.com/manifest.json) | All | Yes | English, Bosnian, Macedonian, Croatian, Serbian & Slovenian |
+| [Wizdom Subtitles](https://www.reddit.com/r/StremioAddons/comments/jc8b8q/ive_built_an_addon_for_hebrew_subtitles/) | [manifest](https://4b139a4b7f94-wizdom-stremio-v2.baby-beamup.club/manifest.json) | Iw | Yes | Hebrew |
