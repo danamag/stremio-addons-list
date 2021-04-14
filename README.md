@@ -186,3 +186,4 @@ _Important: some streams may work and some may not, you can never be sure with I
 | [Search and Play](https://www.reddit.com/r/StremioAddons/comments/li7i62/remote_addon_search_and_play_for_stremio/) | [manifest](https://searchandplay.unlimited-fun.xyz/manifest.json) | En | Yes | new search features for android |
 | [TMDB Alternatives](https://www.reddit.com/r/StremioAddons/comments/l16jm0/remote_addon_tmdb_alternatives_for_stremio/) | [manifest](https://24dfd6fd4287-stremio-tmdb.baby-beamup.club/manifest.json) | En | Yes | "Cinemeta" rarely gets series lists wrong, this addon solves that |
 | [IMDB ID Search](https://www.reddit.com/r/StremioAddons/comments/em7sqc/remote_addon_imdb_id_search_for_stremio/) | [manifest](https://my-id-search.herokuapp.com/manifest.json) | En | Yes | search movies by imdb id |
+| cinemeta Extend | [manifest](https://9b7c457c25d2-stremio-addon.baby-beamup.club/manifest.json) | En | Yes | more year filters |
