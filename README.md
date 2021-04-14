@@ -13,6 +13,7 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 | [Torrentio Lite](https://www.reddit.com/r/StremioAddons/comments/m02658/remote_addon_torrentio_lite_for_stremio/) | [settings](https://torrentio.strem.fun/lite/) - [manifest](https://torrentio.strem.fun/lite/manifest.json) | All | Yes | simpler is sometimes better |
 | [ThePirateBay+](https://www.reddit.com/r/StremioAddons/comments/axj2es/news_why_use_thepiratebay_addon_over_piratebay/) | [manifest](https://thepiratebay-plus.strem.fun/manifest.json) | All | Yes |  |
 | [YTS](https://www.reddit.com/r/StremioAddons/comments/dsv8xa/remote_addon_yts_movie_catalog_for_stremio/) | [manifest](http://stremio-yts.herokuapp.com/manifest.json) | En | Yes | movies only |
+| [ThePirateBay Catalog](https://www.reddit.com/r/StremioAddons/comments/l16oxi/remote_addon_thepiratebay_catalog_for_stremio/) | [manifest](https://5db836ec3ef8-thepiratebay-ctl.baby-beamup.club/manifest.json) | All | Yes | not what you'd expect |
 | [Mico-Leão Dublado](https://www.reddit.com/r/StremioAddons/comments/gixmob/remote_addon_portuguese_brasil_dubbed_movies_for/) | [manifest](https://27a5b2bfe3c0-stremio-brazilian-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | |
 | CineTorrent | [manifest](https://150203dd784e-cinetorrent-addon.baby-beamup.club/manifest.json) | Pt / Br / En | Yes | |
 | PelicuLatino | [manifest](https://peliculatino.herokuapp.com/manifest.json) | Es | Yes | |
@@ -32,10 +33,11 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 
 **Movie & TV - HTTP Stream Addons**
 
-| Name  | Link | Language | Remote |
-| ------------- | ------------- | ------------- | ------------- |
-| [123movies](https://www.reddit.com/r/StremioAddons/comments/lppoxz/remote_addon_123movies_for_stremio/) | [manifest](https://movies123-strem.herokuapp.com/manifest.json) | En | Yes |
-| [Awesome Everything](https://www.reddit.com/r/StremioAddons/comments/fl8xc5/remote_addon_debrid_flicks_for_stremio_real_debrid/) | available with [PMS](/PimpMyStremio.md) | En | No |
+| Name  | Link | Language | Remote | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| [123movies](https://www.reddit.com/r/StremioAddons/comments/lppoxz/remote_addon_123movies_for_stremio/) | [manifest](https://movies123-strem.herokuapp.com/manifest.json) | En | Yes | |
+| [Awesome Everything](https://www.reddit.com/r/StremioAddons/comments/fl8xc5/remote_addon_debrid_flicks_for_stremio_real_debrid/) | available with [PMS](/PimpMyStremio.md) | En | No | |
+| [Lobo-guara Series (BR addon)](https://www.reddit.com/r/StremioAddons/comments/li791n/remote_addon_loboguara_series_br_addon_for_stremio/) | [manifest](https://94c8cb9f702d-lobo-guara-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | series only |
 
 ---
 
@@ -74,6 +76,15 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 | Name  | Link | Language | Remote |
 | ------------- | ------------- | ------------- | ------------- |
 | [Podcasts for All](https://www.reddit.com/r/StremioAddons/comments/bpcpe1/remote_addon_podcasts_for_all_for_stremio/) | [manifest](https://podcasts-for-all.ga/manifest.json) | All | Yes |
+
+---
+
+**Vlog - HTTP Stream Addons**
+
+| Name  | Link | Language | Remote |
+| ------------- | ------------- | ------------- | ------------- |
+| YouTube | [manifest](https://podcasts-for-all.ga/manifest.json) | All | Yes |
+| [Dlive.tv](https://www.reddit.com/r/StremioAddons/comments/blbs8s/remote_addon_dlivetv_for_stremio/) | [manifest](https://dlive.unlimited-fun.xyz/manifest.json) | All | Yes |
 
 ---
 
