@@ -128,6 +128,18 @@ _Important: some streams may work and some may not, you can never be sure with I
 
 ---
 
+**Video Courses - HTTP Stream Add-ons**
+
+| Name  | Link | Language | Remote | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| [Udemy Courses](https://www.reddit.com/r/StremioAddons/comments/ctecga/remote_addon_udemy_courses_for_stremio/) | [manifest](https://33f53079954e-ftututs.beamup.dev/manifest.json) | En | Yes | |
+| [Video Courses](https://www.reddit.com/r/StremioAddons/comments/ctebu9/remote_addon_video_courses_for_stremio/) | [manifest](https://33f53079954e-ftututs.beamup.dev) | En | Yes | |
+| [Cooking Recipes](https://www.reddit.com/r/StremioAddons/comments/cfas8w/remote_addon_cooking_recipes_for_stremio/) | [manifest](https://caching.stremio.net/cookingvideos.now.sh/manifest.json) | En | Yes | |
+| [English Lessons Videos](https://www.reddit.com/r/StremioAddons/comments/f7w98d/remote_addon_english_lessons_videos_for_stremio/) | [manifest](https://stremio-engvid-plugin.herokuapp.com/manifest.json) | En | Yes | |
+| [Learn Programming](https://www.reddit.com/r/StremioAddons/comments/c4qugh/remote_addon_learn_programming_in_stremio/) | [manifest](https://learn-programming.baby-supernode.xyz/manifest.json) | All | Yes | |
+
+---
+
 **Porn - HTTP Stream Addons**
 
 | Name  | Link | Language | Remote | Notes |
