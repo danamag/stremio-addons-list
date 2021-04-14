@@ -108,6 +108,16 @@ _Important: some streams may work and some may not, you can never be sure with I
 
 ---
 
+**Gaming - HTTP Stream Addons**
+
+| Name  | Link | Language | Remote | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| [Video Games](https://www.reddit.com/r/StremioAddons/comments/albtsr/remote_addon_video_games_for_stremio/) | [manifest](https://caching.stremio.net/stremio-games.now.sh/manifest.json) | En | Yes | trailers + prices |
+| YouTube | [manifest](https://podcasts-for-all.ga/manifest.json) | All | Yes | official addon, installed by default |
+| [Dlive.tv](https://www.reddit.com/r/StremioAddons/comments/blbs8s/remote_addon_dlivetv_for_stremio/) | [manifest](https://dlive.unlimited-fun.xyz/manifest.json) | All | Yes | |
+
+---
+
 **Public Domain Movies**
 
 | Name  | Link | Language | Remote | Notes |
