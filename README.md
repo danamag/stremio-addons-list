@@ -81,10 +81,10 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 
 **Vlog - HTTP Stream Addons**
 
-| Name  | Link | Language | Remote |
-| ------------- | ------------- | ------------- | ------------- |
-| YouTube | [manifest](https://podcasts-for-all.ga/manifest.json) | All | Yes |
-| [Dlive.tv](https://www.reddit.com/r/StremioAddons/comments/blbs8s/remote_addon_dlivetv_for_stremio/) | [manifest](https://dlive.unlimited-fun.xyz/manifest.json) | All | Yes |
+| Name  | Link | Language | Remote | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| YouTube | [manifest](https://podcasts-for-all.ga/manifest.json) | All | Yes | official addon, installed by default |
+| [Dlive.tv](https://www.reddit.com/r/StremioAddons/comments/blbs8s/remote_addon_dlivetv_for_stremio/) | [manifest](https://dlive.unlimited-fun.xyz/manifest.json) | All | Yes | |
 
 ---
 
