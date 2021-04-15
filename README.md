@@ -198,3 +198,31 @@ _Important: some streams may work and some may not, you can never be sure with I
 | English Portuguese Br Subtitles | [manifest](https://subtitles-stremio-addon.herokuapp.com/manifest.json) | All | Yes | includes other languages as well |
 | [Titlovi.com Subtitles](https://www.reddit.com/r/StremioAddons/comments/lpp6ic/remote_addon_titlovicom_for_stremio/) | [manifest](https://stremio-titlovi-com.herokuapp.com/manifest.json) | All | Yes | English, Bosnian, Macedonian, Croatian, Serbian & Slovenian |
 | [Wizdom Subtitles](https://www.reddit.com/r/StremioAddons/comments/jc8b8q/ive_built_an_addon_for_hebrew_subtitles/) | [manifest](https://4b139a4b7f94-wizdom-stremio-v2.baby-beamup.club/manifest.json) | Iw | Yes | Hebrew |
+
+---
+
+**Miscellaneous**
+
+| Name  | Link | Language | Remote | Notes |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| [Peario](https://www.reddit.com/r/StremioAddons/comments/g6klce/remote_addon_watch_together_with_friends_with_the/) | [direct link](https://peario.xyz/) | All | Yes | watch with friends |
+| English Portuguese Br Subtitles | [manifest](https://subtitles-stremio-addon.herokuapp.com/manifest.json) | All | Yes | includes other languages as well |
+| [Discord Rich Presence](https://www.reddit.com/r/StremioAddons/comments/dgcezb/local_addon_discord_rich_presence_for_stremio/) | available with [PMS](/PimpMyStremio.md) | All | Yes | adds notification to Discord when watching |
+
+---
+
+**Spin-off Projects**
+
+- [PimpMyStremio](/PimpMyStremio.md)
+- [PimpMyStremio Android](https://github.com/sleeyax/pms-android)
+- [Stremio Downloader](https://www.reddit.com/r/StremioAddons/comments/datghc/news_stremio_downloader_now_available/)
+- [Stremio Catalog Builder](https://www.reddit.com/r/StremioAddons/comments/atizrk/news_stremio_catalog_builder/)
+- [Random Movie Recommendations](https://www.reddit.com/r/StremioAddons/comments/atff1f/news_random_movie_recommendations_for_stremio/)
+
+---
+
+**Guides**
+
+- [Stremio - Watch together with friends](https://www.reddit.com/r/StremioAddons/comments/g6klce/remote_addon_watch_together_with_friends_with_the/)
+- [Stremio - Phone Remote](https://www.reddit.com/r/StremioAddons/comments/g6klce/remote_addon_watch_together_with_friends_with_the/)
+- [PimpMyStremio - Running on Android with Termux](https://gist.github.com/sleeyax/e9635eb352a4fcdf94194f763d743689) (alternative to PimpMyStremio Android)
