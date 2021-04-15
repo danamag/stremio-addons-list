@@ -18,7 +18,7 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 | CineTorrent | [manifest](https://150203dd784e-cinetorrent-addon.baby-beamup.club/manifest.json) | Pt / Br / En | Yes | |
 | PelicuLatino | [manifest](https://peliculatino.herokuapp.com/manifest.json) | Es | Yes | |
 | Séptimo arte v3 | [manifest](https://app-septimoarte.herokuapp.com/manifest.json) | Es | Yes | |
-| TorrentMafya | [manifest](https://5a0d1888fa64-torrentmafya-stremio-addon.baby-beamup.club/manifest.json) | Tr | Yes | |
+| [TorrentMafya](https://www.reddit.com/r/StremioAddons/comments/mranx5/remote_addon_torrentmafya_for_stremio/) | [manifest](https://5a0d1888fa64-torrentmafya-stremio-addon.baby-beamup.club/manifest.json) | Tr | Yes | |
 
 ---
 
@@ -206,7 +206,6 @@ _Important: some streams may work and some may not, you can never be sure with I
 | Name  | Link | Language | Remote | Notes |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | [Peario](https://www.reddit.com/r/StremioAddons/comments/g6klce/remote_addon_watch_together_with_friends_with_the/) | [direct link](https://peario.xyz/) | All | Yes | watch with friends |
-| English Portuguese Br Subtitles | [manifest](https://subtitles-stremio-addon.herokuapp.com/manifest.json) | All | Yes | includes other languages as well |
 | [Discord Rich Presence](https://www.reddit.com/r/StremioAddons/comments/dgcezb/local_addon_discord_rich_presence_for_stremio/) | available with [PMS](/PimpMyStremio.md) | All | Yes | adds notification to Discord when watching |
 
 ---
