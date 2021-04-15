@@ -17,7 +17,7 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 | [Mico-Leão Dublado](https://www.reddit.com/r/StremioAddons/comments/gixmob/remote_addon_portuguese_brasil_dubbed_movies_for/) | [manifest](https://27a5b2bfe3c0-stremio-brazilian-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | |
 | CineTorrent | [manifest](https://150203dd784e-cinetorrent-addon.baby-beamup.club/manifest.json) | Pt / Br / En | Yes | |
 | PelicuLatino | [manifest](https://peliculatino.herokuapp.com/manifest.json) | Es | Yes | |
-| Séptimo arte v3 | [manifest](https://app-septimoarte.herokuapp.com/manifest.json) | Es | Yes | |
+| [Séptimo arte v3](https://www.reddit.com/r/StremioAddons/comments/datens/remote_addon_s%C3%A9ptimo_arte_spanish_content_for/) | [manifest](https://app-septimoarte.herokuapp.com/manifest.json) | Es | Yes | |
 | [TorrentMafya](https://www.reddit.com/r/StremioAddons/comments/mranx5/remote_addon_torrentmafya_for_stremio/) | [manifest](https://5a0d1888fa64-torrentmafya-stremio-addon.baby-beamup.club/manifest.json) | Tr | Yes | |
 
 ---
