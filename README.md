@@ -28,6 +28,7 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | [Torrentio](https://www.reddit.com/r/StremioAddons/comments/fkolp1/remote_addon_torrentio_for_stremio_must_read/) | [settings](https://torrentio.strem.fun/) - [manifest](https://torrentio.strem.fun/manifest.json) | All | Yes | RealDebrid, AllDebrid, Premiumize, DebridLink, Put.io |
 | [Deflix](https://www.reddit.com/r/StremioAddons/comments/fl8xc5/remote_addon_debrid_flicks_for_stremio_real_debrid/) | [settings](https://www.deflix.tv/stremio/) - [manifest](https://stremio.deflix.tv/manifest.json) | En | Yes | RealDebrid, AllDebrid, Premiumize |
+| Orion | [settings](https://5a0d1888fa64-orion.baby-beamup.club/configure) | En | Yes | Orion |
 
 ---
 
