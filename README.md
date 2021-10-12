@@ -14,7 +14,8 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 | [ThePirateBay+](https://www.reddit.com/r/StremioAddons/comments/axj2es/news_why_use_thepiratebay_addon_over_piratebay/) | [manifest](https://thepiratebay-plus.strem.fun/manifest.json) | All | Yes |  |
 | [YTS](https://www.reddit.com/r/StremioAddons/comments/dsv8xa/remote_addon_yts_movie_catalog_for_stremio/) | [manifest](http://stremio-yts.herokuapp.com/manifest.json) | En | Yes | movies only |
 | [ThePirateBay Catalog](https://www.reddit.com/r/StremioAddons/comments/l16oxi/remote_addon_thepiratebay_catalog_for_stremio/) | [manifest](https://5db836ec3ef8-thepiratebay-ctl.baby-beamup.club/manifest.json) | All | Yes | not what you'd expect |
-| Torrentio Brazuca | [manifest](https://torrentio.strem.fun/brazuca/manifest.json) | Pt / Br | Yes | pre-configured version of Torrentio for brazilian torrents |
+| [Torrentio Brazuca](https://www.reddit.com/r/StremioAddons/comments/q6pckv/news_torrentio_update_priority_language/) | [manifest](https://torrentio.strem.fun/brazuca/manifest.json) | Pt / Br | Yes | pre-configured version of Torrentio for brazilian torrents |
+| [Brazuca Torrents](https://www.reddit.com/r/StremioAddons/comments/q6pckv/news_torrentio_update_priority_language/) | [manifest](https://94c8cb9f702d-brazuca-torrents.baby-beamup.club/manifest.json) | Pt / Br | Yes | spin-off of "Torrentio Brazuca" that shows only brazilian torrents |
 | [Mico-Leão Dublado](https://www.reddit.com/r/StremioAddons/comments/gixmob/remote_addon_portuguese_brasil_dubbed_movies_for/) | [manifest](https://27a5b2bfe3c0-stremio-brazilian-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | |
 | CineTorrent | [manifest](https://150203dd784e-cinetorrent-addon.baby-beamup.club/manifest.json) | Pt / Br / En | Yes | |
 | PelicuLatino | [manifest](https://peliculatino.herokuapp.com/manifest.json) | Es | Yes | |
