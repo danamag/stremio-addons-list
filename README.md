@@ -14,6 +14,7 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 | [ThePirateBay+](https://www.reddit.com/r/StremioAddons/comments/axj2es/news_why_use_thepiratebay_addon_over_piratebay/) | [manifest](https://thepiratebay-plus.strem.fun/manifest.json) | All | Yes |  |
 | [YTS](https://www.reddit.com/r/StremioAddons/comments/dsv8xa/remote_addon_yts_movie_catalog_for_stremio/) | [manifest](http://stremio-yts.herokuapp.com/manifest.json) | En | Yes | movies only |
 | [ThePirateBay Catalog](https://www.reddit.com/r/StremioAddons/comments/l16oxi/remote_addon_thepiratebay_catalog_for_stremio/) | [manifest](https://5db836ec3ef8-thepiratebay-ctl.baby-beamup.club/manifest.json) | All | Yes | not what you'd expect |
+| Torrentio Brazuca | [manifest](https://torrentio.strem.fun/brazuca/manifest.json) | Pt / Br | Yes | pre-configured version of Torrentio for brazilian torrents |
 | [Mico-Leão Dublado](https://www.reddit.com/r/StremioAddons/comments/gixmob/remote_addon_portuguese_brasil_dubbed_movies_for/) | [manifest](https://27a5b2bfe3c0-stremio-brazilian-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | |
 | CineTorrent | [manifest](https://150203dd784e-cinetorrent-addon.baby-beamup.club/manifest.json) | Pt / Br / En | Yes | |
 | PelicuLatino | [manifest](https://peliculatino.herokuapp.com/manifest.json) | Es | Yes | |
@@ -37,6 +38,7 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 | Name  | Link | Language | Remote | Notes |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | [123movies](https://www.reddit.com/r/StremioAddons/comments/lppoxz/remote_addon_123movies_for_stremio/) | [manifest](https://movies123-strem.herokuapp.com/manifest.json) | En | Yes | |
+| Trailers.to | [manifest](https://trailers.to/manifest.json) | En | Yes | shows an ad for Trailers.to if the stream is unavailable |
 | [Awesome Everything](https://www.reddit.com/r/StremioAddons/comments/fl8xc5/remote_addon_debrid_flicks_for_stremio_real_debrid/) | available with [PMS](/PimpMyStremio.md) | En | No | |
 | [Lobo-guara Series (BR addon)](https://www.reddit.com/r/StremioAddons/comments/li791n/remote_addon_loboguara_series_br_addon_for_stremio/) | [manifest](https://94c8cb9f702d-lobo-guara-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | series only |
 
