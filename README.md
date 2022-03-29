@@ -38,7 +38,6 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 
 | Name  | Link | Language | Remote | Notes |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| [123movies](https://www.reddit.com/r/StremioAddons/comments/lppoxz/remote_addon_123movies_for_stremio/) | [manifest](https://movies123-strem.herokuapp.com/manifest.json) | En | Yes | |
 | Trailers.to | [manifest](https://trailers.to/manifest.json) | En | Yes | shows an ad for Trailers.to if the stream is unavailable |
 | [Awesome Everything](https://www.reddit.com/r/StremioAddons/comments/fl8xc5/remote_addon_debrid_flicks_for_stremio_real_debrid/) | available with [PMS](/PimpMyStremio.md) | En | No | |
 | [Lobo-guara Series (BR addon)](https://www.reddit.com/r/StremioAddons/comments/li791n/remote_addon_loboguara_series_br_addon_for_stremio/) | [manifest](https://94c8cb9f702d-lobo-guara-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | series only |
@@ -57,8 +56,6 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 
 | Name  | Link | Language | Remote | Notes |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| [MyAnimeStreams+](https://www.reddit.com/r/StremioAddons/comments/kv2dmk/remote_addon_myanimestreams_for_stremio_sub_and/) | [manifest](https://myanimestreams.herokuapp.com/manifest.json) | En / Jp | Yes | SUB + DUB - requires "Anime Kitsu" addon installed |
-| [123movies](https://www.reddit.com/r/StremioAddons/comments/lppoxz/remote_addon_123movies_for_stremio/) | [manifest](https://movies123-strem.herokuapp.com/manifest.json) | En | Yes | only works with "Cinemeta", does not require "Anime Kitsu" installed |
 | [Anime Brasil](https://www.reddit.com/r/StremioAddons/comments/kukm7e/remote_addon_anime_brasil_for_stremio/) | [manifest](https://94c8cb9f702d-anime-tv-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | has own catalog |
 | Hanime.tv | [manifest](https://94c8cb9f702d-hanime-tv-addon.baby-beamup.club/manifest.json) | En / Jp | Yes | NSFW |
 
@@ -79,7 +76,8 @@ A curated list of all known / working Stremio Addons, split by category, in orde
 
 | Name  | Link | Language | Remote |
 | ------------- | ------------- | ------------- | ------------- |
-| [Watch Cartoon Online](https://www.reddit.com/r/StremioAddons/comments/humiui/remote_addon_watch_cartoon_online_for_stremio/) | [manifest](https://watch-cartoon-online.addon.unlimited-fun.xyz/manifest.json) | En | Yes |
+| Cartoon Extra | [manifest](https://cartoonextra.unlimited-fun.xyz/manifest.json) | All | Yes |  |
+| Watch Cartoon Online | [manifest](https://wco.unlimited-fun.xyz/manifest.json) | All | Yes |  |
 
 ---
 
@@ -89,7 +87,6 @@ _Important: some streams may work and some may not, you can never be sure with I
 
 | Name  | Link | Language | Remote | Notes |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| [Indian Live TV](https://www.reddit.com/r/StremioAddons/comments/fjix0c/remote_addon_indian_live_tv/) | [manifest](https://stremio-indian-livetv.vercel.app/manifest.json) | Hi | Yes | some streams require an indian IP |
 | TV en Latino | [manifest](https://c73485b8a7a2-latamtv.baby-beamup.club/manifest.json) | Es | Yes | |
 
 
@@ -99,7 +96,6 @@ _Important: some streams may work and some may not, you can never be sure with I
 
 | Name  | Link | Language | Remote |
 | ------------- | ------------- | ------------- | ------------- |
-| [Podcasts for All](https://www.reddit.com/r/StremioAddons/comments/bpcpe1/remote_addon_podcasts_for_all_for_stremio/) | [manifest](https://podcasts-for-all.ga/manifest.json) | All | Yes |
 
 ---
 
@@ -126,9 +122,7 @@ _Important: some streams may work and some may not, you can never be sure with I
 
 | Name  | Link | Language | Remote | Notes |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| [Maximum Sports](https://www.reddit.com/r/StremioAddons/comments/d515af/remote_addon_maximum_sports_for_stremio/) | [manifest](https://33f53079954e-maxsport.beamup.dev/manifest.json) | En | Yes | |
-| [Extra Time](https://www.reddit.com/r/StremioAddons/comments/fpuzg9/remote_addon_extra_time_sports_highlights_for/) | [manifest](https://extra-time.vercel.app/manifest.json) | En | Yes | |
-| NBAstreams | [manifest](https://nbastreams.stremio1.repl.co/manifest.json) | En | Yes | streams show up when matches begin |
+| [Maximum Sports](https://www.reddit.com/r/StremioAddons/comments/d515af/remote_addon_maximum_sports_for_stremio/) | [manifest](https://1fe84bc728af-maxsport.baby-beamup.club/manifest.json) | En | Yes | |
 
 ---
 
@@ -148,7 +142,6 @@ _Important: some streams may work and some may not, you can never be sure with I
 
 | Name  | Link | Language | Remote | Notes |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| [IMVDB Music Videos](https://www.reddit.com/r/StremioAddons/comments/bsfej3/remote_addon_imvdb_music_videos_for_stremio/) | [manifest](https://stremio-imvdb.tgr.ax/manifest.json) | En | Yes | |
 
 ---
 
