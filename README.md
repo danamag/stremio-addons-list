@@ -1,5 +1,7 @@
 # The Great List of Stremio Addons
 
+**Important: Not all of the community addons are available in Stremio's default addon catalog, [go to this link](https://danamag.github.io/stremio-addons-list/) to learn how to load the complete list of addons in Stremio!**
+
 A curated list of all known / working Stremio Addons, split by category, in order of relevance.
 
 ---
