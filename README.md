@@ -4,6 +4,10 @@
 
 A curated list of all known / working Stremio Addons, split by category, in order of relevance.
 
+## How to install individual addon
+You can go to the addon website listed here and click the `Install` button, this will open Stremio and ask you if you want to install it.  
+Alternatively you can copy the `manifest` link in this list, then open Stremio, click the puzzle icon, and paste this link into the `Search Addon` field. You will be prompted to install it. 
+
 ---
 
 **Movie & TV - Torrent Addons**
