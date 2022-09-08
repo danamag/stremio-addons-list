@@ -63,7 +63,7 @@ Alternatively you can copy the `manifest` link in this list, then open Stremio, 
 | Name  | Link | Language | Remote | Notes |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | [Anime Brasil](https://www.reddit.com/r/StremioAddons/comments/kukm7e/remote_addon_anime_brasil_for_stremio/) | [manifest](https://94c8cb9f702d-anime-tv-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | has own catalog |
-| Hanime.tv | [manifest](https://94c8cb9f702d-hanime-tv-addon.baby-beamup.club/manifest.json) | En / Jp | Yes | NSFW |
+| Hanime.tv | [manifest](https://a0da031547f5-hanime-stremio-main.baby-beamup.club/manifest.json) | En / Jp | Yes | NSFW |
 
 
 ---
