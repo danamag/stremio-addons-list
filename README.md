@@ -45,7 +45,6 @@ Alternatively you can copy the `manifest` link in this list, then open Stremio, 
 | Name  | Link | Language | Remote | Notes |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Trailers.to | [manifest](https://trailers.to/manifest.json) | En | Yes | shows an ad for Trailers.to if the stream is unavailable |
-| [Awesome Everything](https://www.reddit.com/r/StremioAddons/comments/fl8xc5/remote_addon_debrid_flicks_for_stremio_real_debrid/) | available with [PMS](/PimpMyStremio.md) | En | No | |
 | [Lobo-guara Series (BR addon)](https://www.reddit.com/r/StremioAddons/comments/li791n/remote_addon_loboguara_series_br_addon_for_stremio/) | [manifest](https://94c8cb9f702d-lobo-guara-addon.baby-beamup.club/manifest.json) | Pt / Br | Yes | series only |
 
 ---
