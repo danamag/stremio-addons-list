@@ -136,7 +136,8 @@ h1 {
 .labels-list {
   text-align: center;
 }
-.addon-title a {  
+.addon-title a {
+  font-weight: bold;
   color: black; 
 }
 .labels-list .label {
