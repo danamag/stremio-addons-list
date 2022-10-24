@@ -54,7 +54,7 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
   // if an update was done less than 12h ago, then prefer updating from cache
   if ((body || {}).time) {
     console.log('got last known website update time')
-    if (body.time < Date.now() - 12 * 60 * 60 * 1000) {
+    if (body.time > Date.now() - 12 * 60 * 60 * 1000) {
       console.log('cache will be preferred over refreshing manifest data')
       preferCached = true
     }
