@@ -221,6 +221,118 @@ h1 {
   display: inline-block;
   max-width: calc(100% - 130px);
 }
+div#searchBox {
+    float: none;
+    text-align: center;
+    color: #777;
+    margin-top: 4em;
+}
+
+#searchform {
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0 0;
+}
+
+#searchform input {
+    border: 0px;
+    background: transparent;
+    padding: 8px 10px 5px;
+    outline: none;
+}
+
+.mobile-form #searchform {
+    padding-top: 2.5px;
+    width: 215px;
+}
+
+div#searchBox #searchform {
+    border: 1px solid #ddd;
+    width: 238px;
+    padding-top: 1px;
+    display: inline-block;
+}
+
+div#searchBox #searchform input {
+    padding: 5px;
+    display: block;
+}
+
+#searchBox i.fa.fa-search {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.sb-icon-search,
+.sb-search-submit {
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sb-search-submit {
+    background: #fff;
+    /* IE needs this */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    /* IE 8 */
+    filter: alpha(opacity=0);
+    /* IE 5-7 */
+    opacity: 0;
+    color: transparent;
+    border: none;
+    outline: none;
+    z-index: 100;
+}
+
+div#searchBox #searchform .sb-icon-search {
+    /* color: #fff; */
+    /* background: #3f91c3; */
+    z-index: 90;
+    /* font-size: 22px; */
+    font-family: 'FontAwesome';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    top: -1px;
+}
+
+div#searchBox #searchform .sb-icon-search:before {
+    content: "\f002";
+}
+
+span#noEasy {
+    display: block;
+    /* overflow: hidden; */
+    position: relative;
+    width: 30px;
+    height: 30px;
+    float: left;
+    padding-left: 3px;
+}
+
+span#noEasy input {
+    width: 30px;
+    padding: 0 !important;
+}
+
+input#sbox {
+    line-height: 31px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+span#noEasy:hover {
+    color: #444;
+}
 .utterances {
   width: 80% !important;
   max-width: 80% !important;
