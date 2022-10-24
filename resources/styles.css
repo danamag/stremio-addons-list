@@ -211,13 +211,6 @@ h1 {
   position: relative;
   top: 2px;
 }
-.back-to-home {
-  background-color: #A08C80;
-  color: #fff;
-}
-.back-to-home:hover {
-  opacity: 0.8;
-}
 .addon-details {
   display: inline-block;
   max-width: calc(100% - 130px);
@@ -314,6 +307,15 @@ input#sbox {
 }
 span#noEasy:hover {
     color: #444;
+}
+.footer-buttons {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: #A08C80;
+    color: #fff;
+}
+.footer-buttons:hover {
+  opacity: 0.8;
 }
 .utterances {
   width: 80% !important;
