@@ -225,7 +225,8 @@ div#searchBox {
     float: none;
     text-align: center;
     color: #777;
-    margin-top: 4em;
+    margin-top: 0px;
+    margin-bottom: 8px;
 }
 
 #searchform {
