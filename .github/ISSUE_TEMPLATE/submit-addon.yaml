@@ -1,0 +1,25 @@
+name: Addon Submit Form
+description: Submit a Stremio Addon
+title: "Addon Name"
+labels: ["misc"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for submitting a new Stremio addon!
+  - type: input
+    id: addon-url
+    attributes:
+      label: Addon Manifest URL
+      description: What is the addon manifest URL? (ends with "/manifest.json")
+      placeholder: ex. https://addon.server.com/manifest.json
+    validations:
+      required: true
+  - type: textarea
+    id: addon-description
+    attributes:
+      label: Addon Description
+      description: Describe the addon you are submitting.
+      placeholder: My amazing new addon!
+    validations:
+      required: false
