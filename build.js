@@ -174,7 +174,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         addonHtml = addonHtml.replace('{addon-score}', task.score)
         addonHtml = addonHtml.replace('{addon-ups}', task.ups)
         addonHtml = addonHtml.replace('{addon-downs}', task.downs)
-        if (!task.upds && !task.downs)
+        if (!task.ups && !task.downs)
           addonHtml = addonHtml.replace('{addons-score-faded}', ' addon-score-faded')
         else
           addonHtml = addonHtml.replace('{addons-score-faded}', '')
