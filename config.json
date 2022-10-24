@@ -2,7 +2,7 @@
 	"repository": "stremio-addons-list",
 	"author": "danamag",
 	"netlify-domain": "stremio-addons.netlify.app",
-	"page-tile": "Stremio Community Addons List",
+	"page-title": "Stremio Community Addons List",
 	"meta-favicon": "stremio_community_logo.png",
 	"meta-title": "Stremio Addons - Community List",
 	"meta-description": "Stremio community currated addons list, find the best Stremio addons here.",
