@@ -235,6 +235,8 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
       const footer = fs.readFileSync('./template/home/footer.html').toString()
 
       queue.drain(() => {
+        console.log('copying styles')
+        fs.copyFileSync('./resources/styles.css', `${dir}/styles.css`)
         console.log('creating addons catalog json file')
         fs.writeFileSync(`${dir}/catalog.json`, JSON.stringify(addons_collection))
         console.log('creating home page')
