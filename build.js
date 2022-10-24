@@ -144,9 +144,9 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
 
       const addDataForAddon = (listAddonHtml, body, task, labelsAreLinks) => {
         body = body || { name: '', id: '', url: '' }
+        task = task || { labels: [] }
         let addonHtml = listAddonHtml
-        let taskLabels = (task || {}).labels || []
-        let labelsHtml = taskLabels.map(el => el.name.split(' ').join('-')).join(' ')
+        let labelsHtml = task.labels.map(el => el.name.split(' ').join('-')).join(' ')
         if (labelsHtml)
           labelsHtml = ' ' + labelsHtml
         addonHtml = addonHtml.replace('{labels}', labelsHtml)
@@ -164,7 +164,7 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
         const lowerCaseName = body.name.toLowerCase()
         addonHtml = addonHtml.replace('{addon-keywords}', [lowerCaseName, lowerCaseName + ' down', lowerCaseName + ' down or just me', lowerCaseName + ' site down', lowerCaseName + ' not working', lowerCaseName + ' not found', 'stremio addons', 'addons list'])
         addonHtml = addonHtml.split('{addon-logo}').join(body.logo)
-        addonHtml = addonHtml.replace('{addon-types}', taskLabels.map(el => `<${labelsAreLinks ? 'a href="index.html' + (el.name === '<ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon> all addons' ? '' : '?label=' + el.name.split(' ').join('-')) + '"' : 'span'} class="label" style="background-color: #${el.color}">${el.name}</${labelsAreLinks ? 'a' : 'span'}>`).join(''))
+        addonHtml = addonHtml.replace('{addon-types}', task.labels.map(el => `<${labelsAreLinks ? 'a href="index.html' + (el.name === '<ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon> all addons' ? '' : '?label=' + el.name.split(' ').join('-')) + '"' : 'span'} class="label" style="background-color: #${el.color}">${el.name}</${labelsAreLinks ? 'a' : 'span'}>`).join(''))
         addonHtml = addonHtml.replace('{addon-score}', task.score)
         addonHtml = addonHtml.replace('{addon-ups}', task.ups)
         addonHtml = addonHtml.replace('{addon-downs}', task.downs)
