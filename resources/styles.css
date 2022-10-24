@@ -340,6 +340,7 @@ span#noEasy:hover {
     opacity: 0.8;
     background-color: #A08C80;
     color: #fff;
+    font-size: 90%;
 }
 .footer-button:hover {
   opacity: 1;
