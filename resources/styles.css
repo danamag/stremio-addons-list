@@ -263,7 +263,6 @@ div#searchBox #searchform input {
     cursor: pointer;
 }
 
-.sb-icon-search,
 .sb-search-submit {
     width: 30px;
     height: 30px;
@@ -292,25 +291,6 @@ div#searchBox #searchform input {
     z-index: 100;
 }
 
-div#searchBox #searchform .sb-icon-search {
-    /* color: #fff; */
-    /* background: #3f91c3; */
-    z-index: 90;
-    /* font-size: 22px; */
-    font-family: 'FontAwesome';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    -webkit-font-smoothing: antialiased;
-    top: -1px;
-}
-
-div#searchBox #searchform .sb-icon-search:before {
-    content: "\f002";
-}
-
 span#noEasy {
     display: block;
     /* overflow: hidden; */
@@ -324,6 +304,10 @@ span#noEasy {
 span#noEasy input {
     width: 30px;
     padding: 0 !important;
+}
+
+span#noEasy ion-icon[name="search"] {
+    height: 100%;
 }
 
 input#sbox {
