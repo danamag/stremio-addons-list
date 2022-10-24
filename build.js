@@ -59,7 +59,7 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
       preferCached = true
     }
   } else {
-    console.log('warning: could not get ')
+    console.log('warning: could not get last update time')
   }
 
   needle.get('https://stremio-addons.netlify.app/catalog.json', config.needle, (err, resp, body) => {
@@ -202,7 +202,8 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
           let cachedManifest
           oldAddonList.some(oldAddon => {
             if (oldAddon.transportUrl === task.url) {
-              console.log('warning: using cached manifest for: ' + task.name)
+              if (!preferCached)
+                console.log('warning: using cached manifest for: ' + task.name)
               cachedManifest = oldAddon.manifest
               return true
             }
@@ -236,8 +237,12 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
         fs.writeFileSync(`${dir}/catalog.json`, JSON.stringify(addons_collection))
         console.log('creating home page')
         fs.writeFileSync(`${dir}/index.html`, header+listHtml.join('')+footer)
-        console.log('saving timestamp of last update to json')
-        fs.writeFileSync(`${dir}/lastUpdate.json`, JSON.stringify({ time: Date.now() }))
+        if (!preferCached) {
+          console.log('saving timestamp of last update to json')
+          fs.writeFileSync(`${dir}/lastUpdate.json`, JSON.stringify({ time: Date.now() }))
+        } else {
+           console.log('will not save timestamp of last update because cache was preferred')
+        }
       })
 
       addons.sort((a,b) => { return a.score > b.score ? -1 : 1 })
