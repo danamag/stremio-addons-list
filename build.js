@@ -254,7 +254,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
       header = addDataForAddon(header)
       const footer = fs.readFileSync('./template/home/footer.html').toString()
       
-      const parsedFooter = addDataForAddon(parsedFooter)
+      const parsedFooter = addDataForAddon(footer)
 
       queue.drain(() => {
         console.log('copying resources (styles, js, images)')
@@ -269,7 +269,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         console.log('creating addons catalog json file')
         fs.writeFileSync(`${dir}/catalog.json`, JSON.stringify(addons_collection))
         console.log('creating home page')
-        fs.writeFileSync(`${dir}/index.html`, header+listHtml.join('')+footer)
+        fs.writeFileSync(`${dir}/index.html`, header+listHtml.join('')+parsedFooter)
         if (!preferCached) {
           console.log('saving timestamp of last update to json')
           fs.writeFileSync(`${dir}/lastUpdate.json`, JSON.stringify({ time: Date.now() }))
