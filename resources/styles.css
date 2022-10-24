@@ -217,6 +217,9 @@ h1 {
 .back-to-home:hover {
   opacity: 0.8;
 }
+.addon-details {
+  display: inline-block;
+}
 .utterances {
   width: 80% !important;
   max-width: 80% !important;
