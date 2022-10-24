@@ -34,6 +34,8 @@ So here's how you can help:
 - comments support reactions (emojis)
 - "is it online?" real-time check for addons (on the addon page)
 - notifications for new addon releases (through GitHub followship)
+- search addons
+- show comment count for each addon in the list
 
 
 ## How it works
