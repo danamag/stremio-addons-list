@@ -339,11 +339,14 @@ span#noEasy:hover {
   .addon-details {
     max-width: 100%;
   }
+  .addon-description {
+    word-break: break-word;
+  }
   .utterances {
     width: 100% !important;
     max-width: 100% !important;
   }
   div#searchBox #searchform {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
