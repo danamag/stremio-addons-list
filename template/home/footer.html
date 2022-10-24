@@ -60,15 +60,6 @@
                     const label = $(this).text().split(' ').join('-')
                     window.iso.arrange({ filter: '.'+label })
                 })
-                $('a.addon-button.install-button').click(function(e) {
-                    var el = $(this)
-                    setTimeout(function() {
-                      window.alert('test');
-                      console.log('test');
-                    }, 200);
-                    window.location = el.attr('href');
-                    e.preventDefault();
-                })
                 loadIsotope()
             })
         </script>
