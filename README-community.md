@@ -35,3 +35,20 @@ The site is currently refreshed based on the following triggers:
 - a new release was created
 - a new commit was made
 - a label was created, edited or removed
+
+
+## Fork me
+
+This project is available under the MIT license, and uses exclusively free resources. (GitHub WebHooks and Netlify)
+
+To create your own Stremio Addons list:
+- fork this project
+- enable issues for your fork: Settings -> Features -> Issues
+- edit `/config.json` with your repo information
+- connect Netlify to your GitHub fork (on `main` branch)
+- in Netlify: Sites -> (choose site) -> Site Settings -> Build & deploy -> Build settings: Base directory = "Not set" ; Build command = "npm run build" ; Publish directory = "out/"
+- create a Netlify Hook: Sites -> (choose site) -> Site Settings -> Build hooks -> Add build hook (and copy the URL from the hook)
+- create a GitHub WebHook: Settings -> WebHooks (left side menu) -> Add WebHook (top right button): Payload URL = URL copied from Netlify ; choose "Let me select individual events" ; ensure "Active" is enabled
+- choose events that will trigger the website builds: Issues; Labels; Releases; (other events that could be used: Pushes; Issue comments)
+
+You're done!
