@@ -219,6 +219,7 @@ h1 {
 }
 .addon-details {
   display: inline-block;
+  max-width: calc(100% - 130px);
 }
 .utterances {
   width: 80% !important;
