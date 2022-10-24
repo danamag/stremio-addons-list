@@ -1,6 +1,16 @@
         <div class="end-page-space"></div>
         <a class="addon-button footer-button" href="https://{home-netlify-domain}/">All Stremio Addons</a><a class="addon-button footer-button" href="https://github.com/{repo-name}/blob/main/README.md#how-can-i-help" target="_blank">How Can I Help?</a><a class="addon-button footer-button" href="https://github.com/{repo-name}/blob/main/README.md#how-it-works" target="_blank">How It Works</a><a class="addon-button footer-button" href="https://github.com/{repo-name}/issues/new?assignees=&labels=misc&template=submit-addon.yaml&title=Addon+Name" target="_blank">Publish Addon</a><a class="addon-button footer-button" href="https://github.com/{repo-name}/" target="_blank">Source Code</a><a class="addon-button footer-button" href="https://reddit.com/r/StremioAddons" target="_blank">Reddit</a><a class="addon-button footer-button" href="https://discord.gg/zNRf6YF" target="_blank">Discord</a><a class="addon-button footer-button" href="https://stremio.com/downloads" target="_blank">Download Stremio</a>
         <div class="end-page-space"></div>
+        <div id="searchBox" class="mobile-form">
+          <form action="/" class="search-form" id="searchform" method="get">
+            <span id="noEasy">
+               <input class="sb-search-submit" type="submit" value="">
+               <ion-icon name="search"></ion-icon>
+            </span>
+            <input id="sbox" name="q" autocomplete="off" onblur="if (this.placeholder == '') {this.placeholder = 'Search addons';}" onfocus="this.value = ''; if (this.placeholder == 'Search addons') {this.placeholder = '';}" placeholder="Search addons" type="text" x-webkit-speech="">
+          </form>
+        </div>
+        <div class="end-page-space"></div>
         <div class="footer-note">Built with ❤️, the Stremio Addons website is curated by the community!</div>
         <script>
             $(document).ready(function() {
