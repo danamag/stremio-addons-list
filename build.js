@@ -74,7 +74,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
     getPosts().then(data => {
       const addons = []
       const addons_collection = []
-      let all_labels = [{ color: 'A08C80', name: 'show all' }]
+      const all_labels = [{ color: 'A08C80', name: 'show all' }]
       data.forEach(addon => {
         const meta = {
           name: addon.title,
@@ -245,7 +245,10 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
       }, 1)
 
       let header = fs.readFileSync('./template/home/header.html').toString()
-      all_labels.sort(label => label.name === 'misc' ? 1 : 0)
+      // move "misc" label to end of list
+      const miscLabelIndex = all_labels.findIndex(label => label.name === 'misc')
+      const miscLabel = all_labels[miscLabelIndex]
+      all_labels.push(all_labels.splice(miscLabelIndex, 1)[0])
       header = header.replace('{labels-list}', all_labels.map((el, ij) => `<span class="label${!ij ? ' selected' : ''}" style="background-color: #${el.color}">${el.name}</span>`).join(''))
       header = addDataForAddon(header)
       const footer = fs.readFileSync('./template/home/footer.html').toString()
