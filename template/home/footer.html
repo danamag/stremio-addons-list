@@ -21,9 +21,6 @@
                         return $(itemElem).find('.addon-details .addon-title a').text().toLowerCase().includes(query) || $(itemElem).find('.addon-details .addon-description').text().toLowerCase().includes(query)
                       }
                     })
-//                    setTimeout(() => {
-//                      window.iso.needsResizeLayout()
-//                    })
                 })
                 setTimeout(() => {
                     const urlSearchParams = new URLSearchParams(window.location.search)
@@ -44,12 +41,14 @@
             $(document).ready(function() {
                 $('form#searchform').submit(false);
                 $('.labels-list .label').click(function() {
+                    if ($("input#sbox").val()) $("input#sbox").val('')
                     $('.labels-list .label.selected').removeClass('selected')
                     $(this).addClass('selected')
                     const label = $(this).text().split(' ').join('-')
                     window.iso.arrange({ filter: label === 'show-all' ? '*' : '.'+label })
                 })
                 $('.addon-types .label').click(function() {
+                    if ($("input#sbox").val()) $("input#sbox").val('')
                     $('.labels-list .label.selected').removeClass('selected')
                     const pressedLabel = $(this).text()
                     $('.labels-list .label').each(function() {
