@@ -348,7 +348,7 @@ span#noEasy:hover {
   opacity: 1;
 }
 .footer-search {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 .utterances {
   width: 80% !important;
