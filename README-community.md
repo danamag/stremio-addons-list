@@ -8,16 +8,21 @@ To upvote / downvote an addon, find it in [the issues](https://github.com/danama
 
 To comment on an addon, find it in [the issues](https://github.com/danamag/stremio-addons-list/issues) and comment on the issue, this will update the comments on the site too.
 
+To get notifications about new addons press the "Watch" button at the top right of this page. (you will receive email notifications for all new github issues / addon submissions)
+
 
 ## Project Features
 
 - anyone can publish an addon
-- all addons are ordered by community votes, everyone can vote on addons
+- everyone can vote on addons
+- all addons are ordered by community votes
 - addon labels
 - filter by addon labels
 - comments for addons ordered by newest
-- emoji reactions to comments
+- rich text comments
+- comments support reactions (emojis)
 - "is it online?" real-time check for addons (on the addon page)
+- notifications for new addon releases (through GitHub followship)
 
 
 ## How it works
@@ -47,6 +52,8 @@ To create your own Stremio Addons list:
 - edit `/config.json` with your repo information
 - connect Netlify to your GitHub fork (on `main` branch)
 - in Netlify: Sites -> (choose site) -> Site Settings -> Build & deploy -> Build settings: Base directory = "Not set" ; Build command = "npm run build" ; Publish directory = "out/"
+- create a GitHub API token: Settings -> Developer Settings (bottom left) -> Personal access tokens (left side) -> Tokens (classic) -> Generate new token (copy the token to clipboard)
+- add GitHub API token to Netlify: Sites -> (choose site) -> Site Settings -> Build & deploy -> Environment -> Environment Variables -> (add key called "TOKEN" and paste GitHUB API token)
 - create a Netlify Hook: Sites -> (choose site) -> Site Settings -> Build hooks -> Add build hook (and copy the URL from the hook)
 - create a GitHub WebHook: Settings -> WebHooks (left side menu) -> Add WebHook (top right button): Payload URL = URL copied from Netlify ; choose "Let me select individual events" ; ensure "Active" is enabled
 - choose events that will trigger the website builds: Issues; Labels; Releases; Pushes (other events that could be used: Issue comments)
