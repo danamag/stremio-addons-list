@@ -311,6 +311,7 @@ span#noEasy:hover {
 .footer-button {
     margin-left: 10px;
     margin-bottom: 10px;
+    opacity: 0.8;
     background-color: #A08C80;
     color: #fff;
 }
