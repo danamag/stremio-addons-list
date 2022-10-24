@@ -243,6 +243,9 @@ h1 {
   .status-bar {
     width: calc(100% - 30px);
   }
+  .addon-details {
+    max-width: 100%;
+  }
   .utterances {
     width: 100% !important;
     max-width: 100% !important;
