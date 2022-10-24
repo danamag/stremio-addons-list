@@ -30,6 +30,12 @@
                     $('.status-bar').html('Addon status: Offline')
                   });
             })
+            function copyLink(link) {
+                let copyLinkMsg = 'Copy Share Link to Clipboard: Ctrl+C, Enter'
+                if (window.isMobile)
+                    copyLinkMsg = 'Copy Share Link to Clipboard: Long Press Text, Select Copy'
+                window.prompt(copyLinkMsg, link)
+            }
         </script>
     </body>
     </html>
