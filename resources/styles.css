@@ -215,6 +215,9 @@ h1 {
   display: inline-block;
   max-width: calc(100% - 130px);
 }
+.addon-details .label-small {
+  opacity: 0.7;
+}
 div#searchBox {
     float: none;
     text-align: center;
