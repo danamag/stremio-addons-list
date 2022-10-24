@@ -60,7 +60,7 @@
                     const label = $(this).text().split(' ').join('-')
                     window.iso.arrange({ filter: '.'+label })
                 })
-                $('.addon-button.install-button').clic(function(e) {
+                $('.addon-button.install-button').click(function(e) {
                     var el = $(this)
                     setTimeout(function() {
                       window.alert('test');
