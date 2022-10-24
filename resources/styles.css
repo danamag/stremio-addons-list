@@ -243,12 +243,11 @@ div#searchBox {
 
 .mobile-form #searchform {
     padding-top: 2.5px;
-    width: 215px;
 }
 
 div#searchBox #searchform {
     border: 1px solid #ddd;
-    width: 238px;
+    width: 438px;
     padding-top: 1px;
     display: inline-block;
 }
@@ -256,11 +255,7 @@ div#searchBox #searchform {
 div#searchBox #searchform input {
     padding: 5px;
     display: block;
-}
-
-#searchBox i.fa.fa-search {
-    padding: 8px;
-    cursor: pointer;
+    font-size: 100%;
 }
 
 .sb-search-submit {
@@ -346,5 +341,8 @@ span#noEasy:hover {
   .utterances {
     width: 100% !important;
     max-width: 100% !important;
+  }
+  div#searchBox #searchform {
+    max-width: 80%;
   }
 }
