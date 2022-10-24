@@ -49,12 +49,14 @@ const getPosts = () =>
 
 let oldAddonList = []
 let preferCached = false
+let lastKnownUpdateTime = Date.now()
 
 needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, (err, resp, body) => {
   // if an update was done less than 12h ago, then prefer updating from cache
   if ((body || {}).time) {
     console.log('got last known website update time')
     if (body.time > Date.now() - 12 * 60 * 60 * 1000) {
+      lastKnownUpdateTime = body.time
       console.log('cache will be preferred over refreshing manifest data')
       preferCached = true
     }
@@ -241,7 +243,8 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
           console.log('saving timestamp of last update to json')
           fs.writeFileSync(`${dir}/lastUpdate.json`, JSON.stringify({ time: Date.now() }))
         } else {
-           console.log('will not save timestamp of last update because cache was preferred')
+          console.log('persisting last known update time because cache was preferred')
+          fs.writeFileSync(`${dir}/lastUpdate.json`, JSON.stringify({ time: lastKnownUpdateTime }))
         }
       })
 
