@@ -18,7 +18,7 @@ To get notifications about new addons press the "Watch" button at the top right 
 - all addons are ordered by community votes
 - addon labels
 - filter by addon labels
-- comments for addons ordered by newest
+- comments for addon pages
 - rich text comments
 - comments support reactions (emojis)
 - "is it online?" real-time check for addons (on the addon page)
