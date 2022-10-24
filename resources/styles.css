@@ -347,6 +347,9 @@ span#noEasy:hover {
 .footer-button:hover {
   opacity: 1;
 }
+.footer-search {
+  margin-bottom: 0;
+}
 .utterances {
   width: 80% !important;
   max-width: 80% !important;
