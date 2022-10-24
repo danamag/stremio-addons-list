@@ -1,0 +1,54 @@
+        </div>
+        <div class="end-page-space"></div>
+        <div class="footer-note">This Stremio Addons website is curated by the community.<div class="footer-note-space"></div>Want to help? <a href="" target="_blank">Find out how!</a></div>
+        <script>
+            let isotopeLoaded = false
+            function loadIsotope() {
+                isotopeLoaded = true
+                window.iso = new Isotope('.addon-list', {
+                      itemSelector: '.addon-list-item',
+                      getSortData: {
+                        bumps: itemElem => parseInt($(itemElem).find('.score-value').text()),
+                        alpha: '.addon-title',
+                      },
+                      layoutMode: 'vertical',
+                      fitWidth: true
+                })
+                setTimeout(() => {
+                    const urlSearchParams = new URLSearchParams(window.location.search)
+                    const params = Object.fromEntries(urlSearchParams.entries())
+                    if (params.label) {
+                        $('.labels-list .label.selected').removeClass('selected')
+                        const pressedLabel = params.label.split('-').join(' ')
+                        $('.labels-list .label').each(function() {
+                            if ($(this).text() === pressedLabel)
+                                $(this).addClass('selected')
+                        })
+                        const label = pressedLabel.split(' ').join('-')
+                        window.iso.arrange({ filter: '.'+label })
+                    } else
+                        window.iso.arrange({ sortBy: 'bumps', sortAscending: false })
+                }, 500)
+            }
+            $(document).ready(function() {
+                $('.labels-list .label').click(function() {
+                    $('.labels-list .label.selected').removeClass('selected')
+                    $(this).addClass('selected')
+                    const label = $(this).text().split(' ').join('-')
+                    window.iso.arrange({ filter: label === 'show-all' ? '*' : '.'+label })
+                })
+                $('.addon-types .label').click(function() {
+                    $('.labels-list .label.selected').removeClass('selected')
+                    const pressedLabel = $(this).text()
+                    $('.labels-list .label').each(function() {
+                        if ($(this).text() === pressedLabel)
+                            $(this).addClass('selected')
+                    })
+                    const label = $(this).text().split(' ').join('-')
+                    window.iso.arrange({ filter: '.'+label })
+                })
+                loadIsotope()
+            })
+        </script>
+    </body>
+    </html>
