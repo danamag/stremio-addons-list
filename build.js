@@ -152,6 +152,13 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
         addonHtml = addonHtml.replace('{addon-version}', body.version)
         addonHtml = addonHtml.split('{addon-title}').join(body.name)
         addonHtml = addonHtml.split('{addon-description}').join(body.description)
+        addonHtml = addonHtml.split('{home-keywords}').join(config['meta-keywords'])
+        addonHtml = addonHtml.split('{home-page-title}').join(config['page-title'])
+        addonHtml = addonHtml.split('{home-meta-title}').join(config['meta-title'])
+        addonHtml = addonHtml.split('{home-netlify-domain}').join(config['netlify-domain'])
+        addonHtml = addonHtml.split('{home-favicon}').join(config['meta-favicon'])
+        addonHtml = addonHtml.split('{home-description}').join(config['meta-description'])
+        addonHtml = addonHtml.split('{addon-page-title-append}').join(config['meta-addon-title-append'])
         const lowerCaseName = body.name.toLowerCase()
         addonHtml = addonHtml.replace('{addon-keywords}', [lowerCaseName, lowerCaseName + ' down', lowerCaseName + ' down or just me', lowerCaseName + ' site down', lowerCaseName + ' not working', lowerCaseName + ' not found', 'stremio addons', 'addons list'])
         addonHtml = addonHtml.split('{addon-logo}').join(body.logo)
@@ -232,6 +239,7 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
 
       let header = fs.readFileSync('./template/home/header.html').toString()
       header = header.replace('{labels-list}', all_labels.map((el, ij) => `<span class="label${!ij ? ' selected' : ''}" style="background-color: #${el.color}">${el.name}</span>`).join(''))
+      header = header.split('{addon-page-title-append}').join(config['meta-addon-title-append'])
       const footer = fs.readFileSync('./template/home/footer.html').toString()
 
       queue.drain(() => {
