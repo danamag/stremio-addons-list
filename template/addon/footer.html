@@ -9,8 +9,13 @@
                   .then((response) => response.json())
                   .then((data) => {
                     if (data && data.id && data.version) {
-                        // consider slow if it takes more than 5s
-                        if (Date.now() - requestStartTime > 5 * 1000) {
+                        if (Date.now() - requestStartTime > 10 * 1000) {
+                                // consider very slow if it takes more than 10s
+                                $('.status-bar').css('background-color', 'red')
+                                $('.status-bar').css('color', 'white')
+                                $('.status-bar').html('Addon status: Online (but very slow)')
+                        } else if (Date.now() - requestStartTime > 5 * 1000) {
+                                // consider slow if it takes more than 5s
                                 $('.status-bar').css('background-color', 'orange')
                                 $('.status-bar').css('color', 'white')
                                 $('.status-bar').html('Addon status: Online (but slow)')
