@@ -109,6 +109,7 @@ h1 {
 .copy-link-button {
   background-color: #FFA030;
   color: #fff;
+  opacity: 0.9;
 }
 .copy-link-button:hover {
   opacity: 0.8;
