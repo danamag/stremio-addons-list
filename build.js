@@ -174,6 +174,10 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         addonHtml = addonHtml.replace('{addon-score}', task.score)
         addonHtml = addonHtml.replace('{addon-ups}', task.ups)
         addonHtml = addonHtml.replace('{addon-downs}', task.downs)
+        if (!task.upds && !task.downs)
+          addonHtml = addonHtml.replace('{addons-score-faded}', ' addon-score-faded')
+        else
+          addonHtml = addonHtml.replace('{addons-score-faded}', '')
         if (!(body.behaviorHints || {}).configurationRequired)
           addonHtml = addonHtml.replace('{install-button}', '<a class="addon-button install-button" href="'+task.url.replace('https://','stremio://')+'">Install</a> <a class="addon-button copy-link-button" href="#" onClick="copyLink(event, \''+task.url+'\')">Copy Link</a>')
         else
