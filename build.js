@@ -145,13 +145,14 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
       const addDataForAddon = (listAddonHtml, body, task, labelsAreLinks) => {
         let addonHtml = listAddonHtml
         if (!body && !task) {
-          // only the home page can be in this scenario
+          // only the home page can be in this scenario (header / footer)
           addonHtml = addonHtml.split('{home-keywords}').join(config['meta-keywords'])
           addonHtml = addonHtml.split('{home-page-title}').join(config['page-title'])
           addonHtml = addonHtml.split('{home-meta-title}').join(config['meta-title'])
           addonHtml = addonHtml.split('{home-netlify-domain}').join(config['netlify-domain'])
           addonHtml = addonHtml.split('{home-favicon}').join(config['meta-favicon'])
           addonHtml = addonHtml.split('{home-description}').join(config['meta-description'])
+          addonHtml = addonHtml.split('{repo-name}').join(config.author+'/'+config.repository)
           return addonHtml
         }
         // we replace netlify domain here again for the addon page header template
@@ -252,6 +253,8 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
       header = header.replace('{labels-list}', all_labels.map((el, ij) => `<span class="label${!ij ? ' selected' : ''}" style="background-color: #${el.color}">${el.name}</span>`).join(''))
       header = addDataForAddon(header)
       const footer = fs.readFileSync('./template/home/footer.html').toString()
+      
+      const parsedFooter = addDataForAddon(parsedFooter)
 
       queue.drain(() => {
         console.log('copying resources (styles, js, images)')
