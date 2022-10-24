@@ -74,7 +74,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
     getPosts().then(data => {
       const addons = []
       const addons_collection = []
-      const all_labels = [{ color: 'A08C80', name: 'show all' }]
+      let all_labels = [{ color: 'A08C80', name: 'show all' }]
       data.forEach(addon => {
         const meta = {
           name: addon.title,
