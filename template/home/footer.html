@@ -14,13 +14,15 @@
                       layoutMode: 'vertical',
                       fitWidth: true
                 })
-                $("input#sbox").change(function() {
-                    const query = $(this).val().toLowerCase()
+                $('form#searchform').submit(function() {
+                    const query = $("input#sbox").val().toLowerCase()
+                    $("input#sbox").blur()
                     window.iso.arrange({
                       filter: function(itemElem) {
                         return $(itemElem).find('.addon-details .addon-title a').text().toLowerCase().includes(query) || $(itemElem).find('.addon-details .addon-description').text().toLowerCase().includes(query)
                       }
                     })
+                    return false;
                 })
                 setTimeout(() => {
                     const urlSearchParams = new URLSearchParams(window.location.search)
@@ -39,7 +41,6 @@
                 }, 500)
             }
             $(document).ready(function() {
-                $('form#searchform').submit(false);
                 $('.labels-list .label').click(function() {
                     if ($("input#sbox").val()) $("input#sbox").val('')
                     $('.labels-list .label.selected').removeClass('selected')
