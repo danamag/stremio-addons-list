@@ -39,7 +39,7 @@ The site is currently refreshed based on the following triggers:
 
 ## Fork me
 
-This project is available under the MIT license, and uses exclusively free resources. (GitHub WebHooks and Netlify)
+This project is available under the MIT license and uses exclusively free resources. (GitHub WebHooks and Netlify)
 
 To create your own Stremio Addons list:
 - fork this project
