@@ -138,7 +138,8 @@ h1 {
 }
 .addon-title a {
   font-weight: bold;
-  color: black; 
+  color: black;
+  text-decoration: none;
 }
 .labels-list .label {
   font-size: 90%;
@@ -180,9 +181,6 @@ h1 {
 }
 .end-page-space {
   height: 35px;
-}
-.addon-title a {
-  color: black;
 }
 .loader-06 {
   border: .2em solid currentcolor;
