@@ -141,6 +141,9 @@ h1 {
   color: black;
   text-decoration: none;
 }
+.addon-title a:hover {
+  text-decoration: underline;
+}
 .labels-list .label {
   font-size: 90%;
   margin-right: 0;
