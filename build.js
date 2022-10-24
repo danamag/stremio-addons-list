@@ -199,7 +199,7 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
           parsedAddonPage = parsedAddonPage.replace('{addon-list-item}', addonHtml)
           parsedAddonPage = parsedAddonPage.replace('{repo-name}', config.author+'/'+config.repository)
           parsedAddonPage = parsedAddonPage.replace('{issue-number}', task.issueNumber)
-          const parseAddonHeader = addDataForAddon(addonPageHeader, addonManifest, task)
+          const parsedAddonHeader = addDataForAddon(addonPageHeader, addonManifest, task)
           let parsedAddonFooter = addonPageFooter
           parsedAddonFooter = parsedAddonFooter.replace('{addon-url}', task.url)
           console.log('creating page for addon: ' + addonManifest.name)
@@ -239,7 +239,7 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
 
       let header = fs.readFileSync('./template/home/header.html').toString()
       header = header.replace('{labels-list}', all_labels.map((el, ij) => `<span class="label${!ij ? ' selected' : ''}" style="background-color: #${el.color}">${el.name}</span>`).join(''))
-      header = header.split('{addon-page-title-append}').join(config['meta-addon-title-append'])
+      header = addDataForAddon(header)
       const footer = fs.readFileSync('./template/home/footer.html').toString()
 
       queue.drain(() => {
