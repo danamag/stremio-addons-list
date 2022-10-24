@@ -38,6 +38,15 @@
                         })
                         const label = pressedLabel.split(' ').join('-')
                         window.iso.arrange({ filter: '.'+label })
+                    } else if (params.q) {
+                        $("input#sbox").val(params.q)
+                        const query = params.q.toLowerCase()
+                        $("input#sbox").blur()
+                        window.iso.arrange({
+                          filter: function(itemElem) {
+                            return $(itemElem).find('.addon-details .addon-title a').text().toLowerCase().includes(query) || $(itemElem).find('.addon-details .addon-description').text().toLowerCase().includes(query)
+                          }
+                        })
                     } else
                         window.iso.arrange({ sortBy: 'bumps', sortAscending: false })
                 }, 500)
