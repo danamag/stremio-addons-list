@@ -34,3 +34,4 @@ The site is currently refreshed based on the following triggers:
 - a new issue is created (a new addon was submitted)
 - a new release was created
 - a new commit was made
+- a label was created, edited or removed
