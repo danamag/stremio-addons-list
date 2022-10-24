@@ -182,8 +182,10 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
           addonHtml = addonHtml.replace('{configure-button}', '<a class="addon-button configure-button" href="'+task.url.replace('/manifest.json','/configure')+'" target="_blank">Configure</a>')
         else
           addonHtml = addonHtml.replace('{configure-button}', '')
-    //      addonHtml = addonHtml.replace('{comments-button}', `<a href="${task.issueUrl}" class="addon-button" target="_blank"><ion-icon name="chatbubbles" class="gray-icon"></ion-icon> ${task.commentCount}</a>`)
-        addonHtml = addonHtml.replace('{comments-button}', '')
+        if (task.commentCount)
+          addonHtml = addonHtml.replace('{comments-button}', `<a href="${task.issueUrl}" class="addon-button" target="_blank"><ion-icon name="chatbubbles" class="gray-icon"></ion-icon> ${task.commentCount}</a>`)
+        else
+          addonHtml = addonHtml.replace('{comments-button}', '')
         addonHtml = addonHtml.split('{addon-page}').join(`${slug(body.name)}.html`)
         addonHtml = addonHtml.split('{issue-url}').join(task.issueUrl)
         addonHtml = addonHtml.split('{repo-name}').join(config.author+'/'+config.repository)
