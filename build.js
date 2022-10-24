@@ -64,7 +64,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
     console.log('warning: could not get last update time')
   }
 
-  needle.get('https://${config['netlify-domain']}/catalog.json', config.needle, (err, resp, body) => {
+  needle.get(`https://${config['netlify-domain']}/catalog.json`, config.needle, (err, resp, body) => {
     if ((body || [])[0].transportUrl && body[0].transportName && body[0].manifest) {
       console.log('loaded old addon catalog')
       oldAddonList = body
