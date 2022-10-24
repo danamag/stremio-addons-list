@@ -143,6 +143,10 @@ h1 {
   font-size: 90%;
   margin-right: 0;
   margin: 2px 4px 10px;
+  opacity: 0.8;
+}
+.labels-list .label:hover {
+  opacity: 1;
 }
 .labels-list .label.selected {
   background-color: #4c5257 !important;
@@ -226,7 +230,7 @@ h1 {
   opacity: 0.5;
 }
 .addon-details .label-small:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 div#searchBox {
     float: none;
