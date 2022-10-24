@@ -143,7 +143,7 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
       const listHtml = []
 
       const addDataForAddon = (listAddonHtml, body, task, labelsAreLinks) => {
-        body = body || {}
+        body = body || { name: '', id: '', url: '' }
         let addonHtml = listAddonHtml
         let taskLabels = (task || {}).labels || []
         let labelsHtml = taskLabels.map(el => el.name.split(' ').join('-')).join(' ')
