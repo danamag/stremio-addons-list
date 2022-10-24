@@ -50,6 +50,7 @@
                 })
                 $('.addon-types .label').click(function() {
                     if ($("input#sbox").val()) $("input#sbox").val('')
+                    window.scrollTo(0, 0)
                     $('.labels-list .label.selected').removeClass('selected')
                     const pressedLabel = $(this).text()
                     $('.labels-list .label').each(function() {
