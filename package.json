@@ -1,0 +1,15 @@
+{
+  "name": "stremio-addons-list",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "@octokit/graphql": "^4.5.2",
+    "needle": "3.1.0",
+    "async": "3.2.4",
+    "slug": "8.2.2"
+  }
+}
