@@ -175,7 +175,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         addonHtml = addonHtml.replace('{addon-ups}', task.ups)
         addonHtml = addonHtml.replace('{addon-downs}', task.downs)
         if (!(body.behaviorHints || {}).configurationRequired)
-          addonHtml = addonHtml.replace('{install-button}', '<a class="addon-button install-button" href="'+task.url.replace('https://','stremio://')+'">Install</a><a class="addon-button copy-link-button" href="'+task.url+'" onClick="copyLink(\''+task.url+'\')">Copy Link</a>')
+          addonHtml = addonHtml.replace('{install-button}', '<a class="addon-button install-button" href="'+task.url.replace('https://','stremio://')+'">Install</a><a class="addon-button copy-link-button" href="#" onClick="copyLink(\''+task.url+'\')">Copy Link</a>')
         else
           addonHtml = addonHtml.replace('{install-button}', '')
         if ((body.behaviorHints || {}).configurable)
