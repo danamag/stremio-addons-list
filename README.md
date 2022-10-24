@@ -11,6 +11,17 @@ To comment on an addon, find it in [the issues](https://github.com/danamag/strem
 To get notifications about new addons press the "Watch" button at the top right of this page. (you will receive email notifications for all new github issues / addon submissions)
 
 
+## How Can I Help?
+
+This project is completely automated, what addons get in the list and what addons are removed is decided by each and one of you, the only requirement is a free GitHub profile.
+
+So here's how you can help:
+- add addons that are working (and not yet) in the list (by creating a new GitHub issue)
+- give a thumbs up / down to the addons that are already in the list (through GitHub comment reactions)
+- comment and discuss addons (through the GitHub commenting system)
+- propose new things and get involved! all github issues that are not created based on the "Publish Stremio Addon" issue template will not be added to the addon list, so you can still create issues normally for feature requests and bug reports!
+
+
 ## Project Features
 
 - anyone can publish an addon
