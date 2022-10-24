@@ -308,13 +308,13 @@ input#sbox {
 span#noEasy:hover {
     color: #444;
 }
-.footer-buttons {
+.footer-button {
     margin-left: 10px;
     margin-bottom: 10px;
     background-color: #A08C80;
     color: #fff;
 }
-.footer-buttons:hover {
+.footer-button:hover {
   opacity: 0.8;
 }
 .utterances {
