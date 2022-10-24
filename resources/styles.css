@@ -351,6 +351,12 @@ span#noEasy:hover {
   width: 80% !important;
   max-width: 80% !important;
 }
+.addon-score-faded {
+  opacity: 0.7;
+}
+.addon-score-faded:hover {
+  opacity: 1;
+}
 @media only screen and (max-width: 600px) {
   .addon-list {
     width: 100%;
