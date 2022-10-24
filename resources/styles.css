@@ -196,6 +196,12 @@ h1 {
   vertical-align: top;
   transition: .3s color, .3s border, .3s transform, .3s opacity;
 }
+.label-addon-page {
+  opacity: 0.8;
+}
+.label-addon-page:hover {
+  opacity: 1;
+}
 .status-bar {
   background-color: rgba(0,0,0,0.2);
   display: block;
