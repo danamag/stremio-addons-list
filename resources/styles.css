@@ -151,6 +151,7 @@ h1 {
 .labels-list .label.selected {
   background-color: #4c5257 !important;
   text-decoration: underline !important;
+  opacity: 1 !important;
 }
 .header-note-space {
   height: 5px;
