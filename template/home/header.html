@@ -21,5 +21,12 @@
     <body>
       <div class="header-note">Not all community addons are available in Stremio's internal addon catalog.<div class="header-note-space"></div>To load the community curated addons list in Stremio on your current device (presumes you have Stremio installed), simply press <a href="stremio://{home-netlify-domain}/catalog.json">this link</a>!</div>
       <h1>{home-page-title}</h1>
+      <div id="searchBox" class="mobile-form">
+          <form action="/search" class="search-form" id="searchform" method="get">
+              <span id="noEasy"><input class="sb-search-submit" type="submit" value="">
+              <span class="sb-icon-search"></span></span>
+              <input id="sbox" name="q" onblur="if (this.placeholder == '') {this.placeholder = 'To search type + hit enter';}" onfocus="if (this.placeholder == 'To search type + hit enter') {this.placeholder = '';}" placeholder="To search type + hit enter" type="text" x-webkit-speech="">
+          </form>
+      </div>
       <div class="labels-list">{labels-list}</div>
       <div class="addon-list">
