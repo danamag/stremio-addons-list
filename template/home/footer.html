@@ -14,6 +14,17 @@
                       layoutMode: 'vertical',
                       fitWidth: true
                 })
+                $("input#sbox").change(function() {
+                    const query = $(this).val().toLowerCase()
+                    window.iso.arrange({
+                      filter: function(itemElem) {
+                        return $(itemElem).find('.addon-details .addon-title a').text().toLowerCase().includes(query) || $(itemElem).find('.addon-details .addon-description').text().toLowerCase().includes(query)
+                      }
+                    })
+                    setTimeout(() => {
+                      window.iso.needsResizeLayout()
+                    })
+                })
                 setTimeout(() => {
                     const urlSearchParams = new URLSearchParams(window.location.search)
                     const params = Object.fromEntries(urlSearchParams.entries())
