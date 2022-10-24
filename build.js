@@ -185,6 +185,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         addonHtml = addonHtml.replace('{comments-button}', '')
         addonHtml = addonHtml.split('{addon-page}').join(`${slug(body.name)}.html`)
         addonHtml = addonHtml.split('{issue-url}').join(task.issueUrl)
+        addonHtml = addonHtml.split('{repo-name}').join(config.author+'/'+config.repository)
         return addonHtml
       }
 
@@ -204,10 +205,9 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
           task.labels = [{ color: 'A08C80', name: '<ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon> all addons' }].concat(task.labels)
           let parsedAddonPage = addDataForAddon(addonPageContent, addonManifest, task, true)
           parsedAddonPage = parsedAddonPage.replace('{addon-list-item}', addonHtml)
-          parsedAddonPage = parsedAddonPage.replace('{repo-name}', config.author+'/'+config.repository)
           parsedAddonPage = parsedAddonPage.replace('{issue-number}', task.issueNumber)
           const parsedAddonHeader = addDataForAddon(addonPageHeader, addonManifest, task)
-          let parsedAddonFooter = addonPageFooter
+          let parsedAddonFooter = addDataForAddon(addonPageFooter, addonManifest, task)
           parsedAddonFooter = parsedAddonFooter.replace('{addon-url}', task.url)
           console.log('creating page for addon: ' + addonManifest.name)
           fs.writeFileSync(`${dir}/${slug(addonManifest.name)}.html`, parsedAddonHeader+parsedAddonPage+parsedAddonFooter)
