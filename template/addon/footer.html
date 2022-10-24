@@ -13,21 +13,21 @@
                         if (Date.now() - requestStartTime > 5 * 1000) {
                                 $('.status-bar').css('background-color', 'orange')
                                 $('.status-bar').css('color', 'white')
-                                $('.status-bar').html('Online (but slow)')
+                                $('.status-bar').html('Addon status: Online (but slow)')
                         } else {
                                 $('.status-bar').css('background-color', 'green')
                                 $('.status-bar').css('color', 'white')
-                                $('.status-bar').html('Online')
+                                $('.status-bar').html('Addon status: Online')
                         }
                     } else {
                         $('.status-bar').css('background-color', 'red')
                         $('.status-bar').css('color', 'white')
-                        $('.status-bar').html('Offline')
+                        $('.status-bar').html('Addon status: Offline')
                     }
                   }).catch(e => {
                     $('.status-bar').css('background-color', 'red')
                     $('.status-bar').css('color', 'white')
-                    $('.status-bar').html('Offline')
+                    $('.status-bar').html('Addon status: Offline')
                   });
             })
         </script>
