@@ -1,0 +1,31 @@
+      <h1>{addon-title} v{addon-version}</h1>
+      <div class="addon-types">{addon-types}</div>
+      <div class="addon-list">
+        <div class="addon-list-item" id="{addon-id}">
+            <div class="addon-image">
+                <div class="addon-logo" style="background-image: url({addon-logo})"></div>
+            </div>
+            <div class="addon-description">
+                {addon-description}
+            </div>
+            {install-button}
+            {configure-button}
+            <a href="{issue-url}" class="addon-score-link" target="_blank">
+                <div class="addon-score">
+                    <span class="score-value" style="display: none">{addon-score}</span>
+                    <ion-icon name="thumbs-up" class="orange-icon"></ion-icon> {addon-ups}<div class="score-distance"></div><ion-icon name="thumbs-down" class="orange-icon thumbs-down"></ion-icon> {addon-downs}
+                </div>
+            </a>
+            {comments-button}
+        </div>
+      </div>
+      <div class="status-bar">
+          <div class="box loader-06"></div>
+      </div>
+      <script src="https://utteranc.es/client.js"
+        repo="{repo-name}"
+        issue-number="{issue-number}"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+        </script>

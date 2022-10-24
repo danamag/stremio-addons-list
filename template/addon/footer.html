@@ -1,0 +1,27 @@
+        <div class="end-page-space"></div>
+        <a class="addon-button back-to-home" href="index.html">See Entire List of Addons</a>
+        <div class="end-page-space"></div>
+        <div class="footer-note">This Stremio Addons website is curated by the community.<div class="footer-note-space"></div>Want to help? <a href="" target="_blank">Find out how!</a></div>
+        <script>
+            $(document).ready(function() {
+                fetch('{addon-url}')
+                  .then((response) => response.json())
+                  .then((data) => {
+                    if (data && data.id && data.version) {
+                        $('.status-bar').css('background-color', 'green')
+                        $('.status-bar').css('color', 'white')
+                        $('.status-bar').html('Online')
+                    } else {
+                        $('.status-bar').css('background-color', 'red')
+                        $('.status-bar').css('color', 'white')
+                        $('.status-bar').html('Offline')
+                    }
+                  }).catch(e => {
+                    $('.status-bar').css('background-color', 'red')
+                    $('.status-bar').css('color', 'white')
+                    $('.status-bar').html('Offline')
+                  });
+            })
+        </script>
+    </body>
+    </html>
