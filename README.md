@@ -6,14 +6,14 @@ To submit a new addon to the list, use [this link](https://github.com/danamag/st
 
 To upvote / downvote an addon, find it in [the issues](https://github.com/danamag/stremio-addons-list/issues) and react with a thumbs up / down to the issue comment.
 
-To comment on an addon, find it in [the issues](https://github.com/danamag/stremio-addons-list/issues) and comment on the issue, this will update the comments on the site too.
+To comment on an addon, find it in [the issues](https://github.com/danamag/stremio-addons-list/issues) and comment on the issue, this will update the comments on the site too. (you can also comment with GitHub on the website directly)
 
 To get notifications about new addons press the "Watch" button at the top right of this page. (you will receive email notifications for all new github issues / addon submissions)
 
 
 ## How Can I Help?
 
-This project is completely automated, what addons get in the list and what addons are removed is decided by each and one of you, the only requirement is a free GitHub profile.
+This project is completely automated, what addons get in the list and what addons are removed is decided by each and every one of you, the only requirement is a free GitHub profile.
 
 So here's how you can help:
 - add addons that are working (and not yet) in the list (by creating a new GitHub issue)
@@ -38,7 +38,7 @@ So here's how you can help:
 
 ## How it works
 
-When submitting an addon to the list, a github issue is created to represent this submission. If the original poster closes his/her issue, or someone with access to the project closes the issue, the addon will be removed from the list.
+When submitting an addon to the list, a github issue is created to represent this submission. If the original poster closes their issue, or someone with access to the project closes the issue, the addon will be removed from the list.
 
 All addons in the list are ordered by the thumbs up / down votes of the github issues, if an addon has less than -10 votes it is removed from the list.
 
