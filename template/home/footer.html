@@ -65,6 +65,8 @@
                 loadIsotope()
             })
             function copyLink(link, event) {
+                console.log('link', link)
+                console.log('event', event)
                 let copyLinkMsg = 'Copy Share Link to Clipboard: Ctrl+C, Enter'
                 if (window.isMobile)
                     copyLinkMsg = 'Copy Share Link to Clipboard: Long Press Text, Select Copy'
