@@ -42,6 +42,7 @@
                 }, 500)
             }
             $(document).ready(function() {
+                $('form#searchform').submit(false);
                 $('.labels-list .label').click(function() {
                     $('.labels-list .label.selected').removeClass('selected')
                     $(this).addClass('selected')
