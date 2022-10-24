@@ -4,13 +4,21 @@
         <div class="footer-note">This Stremio Addons website is curated by the community.<div class="footer-note-space"></div>Want to help? <a href="https://github.com/danamag/stremio-addons-list/blob/main/README-community.md" target="_blank">Find out how!</a></div>
         <script>
             $(document).ready(function() {
+                const requestStartTime = Date.now()
                 fetch('{addon-url}')
                   .then((response) => response.json())
                   .then((data) => {
                     if (data && data.id && data.version) {
-                        $('.status-bar').css('background-color', 'green')
-                        $('.status-bar').css('color', 'white')
-                        $('.status-bar').html('Online')
+                        // consider slow if it takes more than 5s
+                        if (Date.now() - requestStartTime > 5 * 1000) {
+                                $('.status-bar').css('background-color', 'orange')
+                                $('.status-bar').css('color', 'white')
+                                $('.status-bar').html('Online (but slow)')
+                        } else {
+                                $('.status-bar').css('background-color', 'green')
+                                $('.status-bar').css('color', 'white')
+                                $('.status-bar').html('Online')
+                        }
                     } else {
                         $('.status-bar').css('background-color', 'red')
                         $('.status-bar').css('color', 'white')
