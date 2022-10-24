@@ -154,6 +154,8 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
           addonHtml = addonHtml.split('{home-description}').join(config['meta-description'])
           return addonHtml
         }
+        // we replace netlify domain here again for the addon page header template
+        addonHtml = addonHtml.split('{home-netlify-domain}').join(config['netlify-domain'])
         addonHtml = addonHtml.split('{addon-page-title-append}').join(config['meta-addon-title-append'])
         let labelsHtml = task.labels.map(el => el.name.split(' ').join('-')).join(' ')
         if (labelsHtml)
