@@ -207,7 +207,7 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
           let parsedAddonFooter = addonPageFooter
           parsedAddonFooter = parsedAddonFooter.replace('{addon-url}', task.url)
           console.log('creating page for addon: ' + addonManifest.name)
-          fs.writeFileSync(`${dir}/${slug(addonManifest.name)}.html`, parseAddonHeader+parsedAddonPage+parsedAddonFooter)
+          fs.writeFileSync(`${dir}/${slug(addonManifest.name)}.html`, parsedAddonHeader+parsedAddonPage+parsedAddonFooter)
           listHtml.push(addonHtml)
           cb()
         }
