@@ -240,7 +240,7 @@ needle.get('https://stremio-addons.netlify.app/lastUpdate.json', config.needle, 
           const filePath = `./resources/${file}`
           if (fs.existsSync(filePath) && !fs.lstatSync(filePath).isDirectory()) {
             console.log(`copied ${file} resource`)
-            fs.copyFileSync(filePath, `${dir}/$file`)
+            fs.copyFileSync(filePath, `${dir}/${file}`)
           }
         })
         fs.copyFileSync('./resources/styles.css', `${dir}/styles.css`)
