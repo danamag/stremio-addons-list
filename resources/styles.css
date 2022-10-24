@@ -79,6 +79,9 @@ h1 {
   margin: 2px 4px 10px;
   text-decoration: none;
 }
+.addon-types .label-small {
+  font-size: 70%;
+}
 .addon-button {
   margin-top: 10px;
   padding: 7px 9px;
