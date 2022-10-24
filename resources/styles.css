@@ -369,6 +369,7 @@ span#noEasy:hover {
     max-width: 100%;
   }
   .addon-description {
+    font-size: 94%;
     word-break: break-word;
   }
   .utterances {
