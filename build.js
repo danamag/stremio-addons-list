@@ -245,6 +245,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
       }, 1)
 
       let header = fs.readFileSync('./template/home/header.html').toString()
+      all_labels = all_labels.sort(label => label.name === 'misc' ? 1 : 0)
       header = header.replace('{labels-list}', all_labels.map((el, ij) => `<span class="label${!ij ? ' selected' : ''}" style="background-color: #${el.color}">${el.name}</span>`).join(''))
       header = addDataForAddon(header)
       const footer = fs.readFileSync('./template/home/footer.html').toString()
