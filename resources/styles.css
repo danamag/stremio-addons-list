@@ -161,7 +161,6 @@ h1 {
   text-decoration: none;
 }
 .header-note {
-  font-weight: bold;
   width: calc(100% - 32px);
   padding: 16px;
   background-color: rgba(0,0,0,0.05);
