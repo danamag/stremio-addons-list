@@ -61,6 +61,7 @@
                 })
                 $('.addon-types .label').click(function() {
                     if ($("input#sbox").val()) $("input#sbox").val('')
+                    if ((window.location || {}).search) window.history.replaceState('', '', window.location.href.replace(window.location.search, ''))
                     window.scrollTo(0, 0)
                     $('.labels-list .label.selected').removeClass('selected')
                     const pressedLabel = $(this).text()
