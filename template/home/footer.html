@@ -46,7 +46,9 @@
                         $("input#sbox").blur()
                         window.iso.arrange({
                           filter: function(itemElem) {
-                            return $(itemElem).find('.addon-details .addon-title a').text().toLowerCase().includes(query) || $(itemElem).find('.addon-details .addon-description').text().toLowerCase().includes(query)
+                            return $(itemElem).find('.addon-details .addon-title a').text().toLowerCase().includes(query)
+                                  || $(itemElem).find('.addon-details .addon-description').text().toLowerCase().includes(query)
+                                  || ($(itemElem).find('.addon-types .label-small').map((ij, el) => $(el).text()).toArray() || []).join(',').toLowerCase().includes(query)
                           }
                         })
                     } else
