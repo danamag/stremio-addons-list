@@ -53,6 +53,7 @@ The site is currently refreshed based on the following triggers:
 - a new release was created
 - a new commit was made
 - a label was created, edited or removed
+- a new comment was made to an issue (to update comment count / votes)
 
 
 ## Fork me
@@ -69,7 +70,7 @@ To create your own Stremio Addons list:
 - add GitHub API token to Netlify: Sites -> (choose site) -> Site Settings -> Build & deploy -> Environment -> Environment Variables -> (add key called "TOKEN" and paste GitHUB API token)
 - create a Netlify Hook: Sites -> (choose site) -> Site Settings -> Build hooks -> Add build hook (and copy the URL from the hook)
 - create a GitHub WebHook: Settings -> WebHooks (left side menu) -> Add WebHook (top right button): Payload URL = URL copied from Netlify ; choose "Let me select individual events" ; ensure "Active" is enabled
-- choose events that will trigger the website builds: Issues; Labels; Releases; Pushes (other events that could be used: Issue comments)
+- choose events that will trigger the website builds: Issues; Labels; Releases; Pushes (optional events: Issue comments)
 - press "Add webhook"
 
 You're done!
