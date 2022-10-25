@@ -355,7 +355,7 @@ span#noEasy:hover {
   max-width: 80% !important;
 }
 .addon-score-faded {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 .addon-score-faded:hover {
   opacity: 1;
