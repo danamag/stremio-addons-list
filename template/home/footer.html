@@ -54,6 +54,8 @@
             $(document).ready(function() {
                 $('.labels-list .label').click(function() {
                     if ($("input#sbox").val()) $("input#sbox").val('')
+                    if ((window.location || {}).search)
+                        window.history.replaceState('', '', window.location.href.replace(window.location.search, ''))
                     $('.labels-list .label.selected').removeClass('selected')
                     $(this).addClass('selected')
                     const label = $(this).text().split(' ').join('-')
@@ -61,7 +63,8 @@
                 })
                 $('.addon-types .label').click(function() {
                     if ($("input#sbox").val()) $("input#sbox").val('')
-                    if ((window.location || {}).search) window.history.replaceState('', '', window.location.href.replace(window.location.search, ''))
+                    if ((window.location || {}).search)
+                        window.history.replaceState('', '', window.location.href.replace(window.location.search, ''))
                     window.scrollTo(0, 0)
                     $('.labels-list .label.selected').removeClass('selected')
                     const pressedLabel = $(this).text()
