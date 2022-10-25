@@ -168,7 +168,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         addonHtml = addonHtml.split('{addon-description}').join(body.description)
         const lowerCaseName = body.name.toLowerCase()
         addonHtml = addonHtml.replace('{addon-keywords}', [lowerCaseName, lowerCaseName + ' down', lowerCaseName + ' down or just me', lowerCaseName + ' site down', lowerCaseName + ' not working', lowerCaseName + ' not found', 'stremio addons', 'addons list'])
-        addonHtml = addonHtml.split('{addon-logo}').join(body.logo)
+        addonHtml = addonHtml.split('{addon-logo}').join(body.logo || body.icon)
         addonHtml = addonHtml.replace('{addon-types}', task.labels.map(el => `<${labelsAreLinks ? 'a href="https://' + config['netlify-domain'] + '/' + (el.name === '<ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon> all addons' ? '' : '?label=' + el.name.split(' ').join('-')) + '"' : 'span'} class="label label-addon-page" style="background-color: #${el.color}">${el.name}</${labelsAreLinks ? 'a' : 'span'}>`).join(''))
         addonHtml = addonHtml.replace('{addon-types-small}', task.labels.map(el => `<${labelsAreLinks ? 'a href="https://' + config['netlify-domain'] + '/' + (el.name === '<ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon> all addons' ? '' : '?label=' + el.name.split(' ').join('-')) + '"' : 'span'} class="label label-small" style="background-color: #${el.color}">${el.name}</${labelsAreLinks ? 'a' : 'span'}>`).join(''))
         addonHtml = addonHtml.replace('{addon-score}', task.score)
