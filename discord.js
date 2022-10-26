@@ -1,3 +1,5 @@
+const slug = require('slug')
+
 const discordGreeting = () => {
   const greetings = ["Hey", "Sup", "Yo", "Knock knock", "Attention", "Yesss", "Oh yeah", "Awesome", "Finally"]
   return greetings[Math.floor(Math.random()*greetings.length)]
