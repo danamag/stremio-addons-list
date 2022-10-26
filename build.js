@@ -396,6 +396,6 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
 
       addons.forEach(addon => queue.push(addon))
 
-    })
+    }).catch(e => console.error(e))
   })
 })
