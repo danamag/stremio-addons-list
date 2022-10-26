@@ -67,16 +67,17 @@ To create your own Stremio Addons list:
 - enable issues for your fork: Settings -> Features -> Issues
 - edit `/config.json` with your repo information
 - connect Netlify to your GitHub fork (on `main` branch)
-- in Netlify: Sites -> (choose site) -> Site Settings -> Build & deploy -> Build settings: Base directory = "Not set" ; Build command = "npm run build" ; Publish directory = "out/"
-- create a GitHub API token: Settings -> Developer Settings (bottom left) -> Personal access tokens (left side) -> Tokens (classic) -> Generate new token (copy the token to clipboard)
-- add GitHub API token to Netlify: Sites -> (choose site) -> Site Settings -> Build & deploy -> Environment -> Environment Variables -> (add key called "TOKEN" and paste GitHUB API token)
-- create a Netlify Hook: Sites -> (choose site) -> Site Settings -> Build & deploy -> Continuous deployment -> Build hooks -> Add build hook (and copy the URL from the hook)
-- create a GitHub WebHook: Settings -> WebHooks (left side menu) -> Add WebHook (top right button): Payload URL = URL copied from Netlify ; choose "Let me select individual events" ; ensure "Active" is enabled
+- in Netlify: `Sites` > `(choose site)` > `Site Settings` > `Build & deploy` > `Build settings`: Base directory = "Not set" ; Build command = "npm run build" ; Publish directory = "out/"
+- create a GitHub API token: `Settings` > `Developer Settings` (bottom left) > `Personal access tokens` (left side) > `Tokens` (classic) > `Generate new token` (copy the token to clipboard)
+- add GitHub API token to Netlify: `Sites` > `(choose site)` > `Site Settings` > `Build & deploy` > `Environment` > `Environment Variables` > (add key called "TOKEN" and paste GitHUB API token)
+- create a Netlify Hook: `Sites` > `(choose site)` > `Site Settings` > `Build & deploy` > `Continuous deployment` > `Build hooks` > `Add build hook` > (copy the URL from the hook)
+- create a GitHub WebHook: `Settings` > `WebHooks` (left side menu) > `Add WebHook` (top right button): Payload URL = URL copied from Netlify ; choose "Let me select individual events" ; ensure "Active" is enabled
 - choose events that will trigger the website builds: Issues; Labels; Releases; Pushes (optional events: Issue comments)
 - press "Add webhook"
-- add GitHub Repository Secret for Netlify Hook: Repository Settings -> Secrets (left side menu) -> Actions -> New repository secret -> Name = "NETLIFY_BUILD_WEBHOOK" ; Paste URL copied from Netlify as Secret (this is needed for the GitHub Action from `/.github/workflows/main.yml` which will do a daily build to update votes)
-- on Github go to Issues -> Labels (top right button) -> (add labels that you need, delete labels that you don't need) (if you want to use the default labels, check the `/.github/ISSUE_TEMPLATE/submit-addon.yaml` file to see the list)
+- add GitHub Repository Secret for Netlify Hook: `Settings` > `Secrets` (left side menu) > `Actions` > `New repository secret`: Name = "NETLIFY_BUILD_WEBHOOK" ; Paste URL copied from Netlify as Secret (this is needed for the GitHub Action from `/.github/workflows/main.yml` which will do a daily build to update votes)
+- on Github go to: `Issues` > `Labels` (top right button) > (add labels that you need, delete labels that you don't need) (if you want to use the default labels, check the `/.github/ISSUE_TEMPLATE/submit-addon.yaml` file to see the list)
 - open `/.github/ISSUE_TEMPLATE/submit-addon.yaml` and edit the labels to match the ones you use for your addons list (if not using the default labels)
-- by default this project only allows submitting issues with the "Publish Stremio Addon" template, if you want to allow blank issues too, then edit the `/.github/ISSUE_TEMPLATE/config.yml` file and set `blank_issues_enabled: true`
+
+Note: by default this project only allows submitting issues with the "Publish Stremio Addon" issue template, if you want to allow blank issues too, then edit the `/.github/ISSUE_TEMPLATE/config.yml` file and set `blank_issues_enabled: true`
 
 You're done!
