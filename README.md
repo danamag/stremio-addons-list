@@ -25,6 +25,8 @@ So here's how you can help:
 ## Project Features
 
 - anyone can publish an addon
+- publishers can choose labels
+- publishers can choose content language (if applicable)
 - everyone can vote on addons
 - all addons are ordered by community votes
 - addon labels
