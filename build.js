@@ -305,6 +305,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
       }
 
       const newAddons = []
+      let firstOne = false
 
       const queue = asyncQueue((task, cb) => {
         const processManifest = addonManifest => {
@@ -318,7 +319,8 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
             transportName: 'http',
             manifest: addonManifest,
           })
-          if (oldAddonList.length && !oldAddonList.find(el => ((el || {}).manifest || {}).id === addonManifest.id)) {
+          if (!firstOne || oldAddonList.length && !oldAddonList.find(el => ((el || {}).manifest || {}).id === addonManifest.id)) {
+            firstOne = true
             task.manifest = body
             newAddons.push(task)
           }
