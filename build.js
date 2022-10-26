@@ -108,7 +108,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
           proposedLabels: [],
           language: 'Multilingual',
         }
-        const chunks = (addon.body || '').split('\n')
+        const chunks = (addon.body || '').split(/\r?\n/)
         let readingFor = false
         chunks.forEach(chunk => {
           if (chunk === '### Addon Manifest URL')
