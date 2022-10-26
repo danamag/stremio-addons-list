@@ -178,6 +178,8 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
 
           if (diff.length) {
             // proposed labels are different than issue labels
+            console.log('setting initial labels for: ' + addon.name)
+            console.log(addon.proposedLabels)
             syncLabelsQueue.push({ postId: addon.postId, proposedLabels: addon.proposedLabels, allLabels: all_labels })
           }
 
