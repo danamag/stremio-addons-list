@@ -29,7 +29,7 @@ body:
       label: Language of Content
       description: Choose the language in which the streams / metadata show. (if applicable)
       options:
-        - All Languages (Default)
+        - Multilingual (Default)
         - Abkhazian (ab-AB)
         - Afar (aa-AA)
         - Afrikaans (af-ZA)
@@ -224,7 +224,7 @@ body:
   - type: checkboxes
     id: labels
     attributes:
-      label: Choose labels
+      label: Choose Labels
       description: Choose the labels that best describe your addon.
       options:
         - label: anime
