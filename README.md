@@ -8,7 +8,7 @@ To upvote / downvote an addon, find it in [the issues](https://github.com/danama
 
 To comment on an addon, find it in [the issues](https://github.com/danamag/stremio-addons-list/issues) and comment on the issue, this will update the comments on the site too. (you can also comment with GitHub on the website directly)
 
-To get notifications about new addons press the "Watch" button at the top right of this page. (you will receive email notifications for all new github issues / addon submissions)
+To get notifications about new addons press the "Watch" button at the top right of this page. (you will receive email notifications for all new addon submissions)
 
 
 ## How Can I Help?
@@ -77,5 +77,6 @@ To create your own Stremio Addons list:
 - add GitHub Repository Secret for Netlify Hook: Repository Settings -> Secrets (left side menu) -> Actions -> New repository secret -> Name = "NETLIFY_BUILD_WEBHOOK" ; Paste URL copied from Netlify as Secret (this is needed for the GitHub Action from `/.github/workflows/main.yml` which will do a daily build to update votes)
 - on Github go to Issues -> Labels (top right button) -> (add labels that you need, delete labels that you don't need) (if you want to use the default labels, check the `/.github/ISSUE_TEMPLATE/submit-addon.yaml` file to see the list)
 - open `/.github/ISSUE_TEMPLATE/submit-addon.yaml` and edit the labels to match the ones you use for your addons list (if not using the default labels)
+- by default this project only allows submitting issues with the "Publish Stremio Addon" template, if you want to allow blank issues too, then edit the `/.github/ISSUE_TEMPLATE/config.yml` file and set `blank_issues_enabled: true`
 
 You're done!
