@@ -3,7 +3,7 @@ const slug = require('slug')
 const needle = require('needle')
 
 const discordGreeting = () => {
-  const greetings = ["Hey", "Sup", "Yo", "Knock knock", "Attention", "Yesss", "Oh yeah", "Awesome", "Finally"]
+  const greetings = ["Hey", "Sup", "Yo", "Knock knock", "Attention", "Yesss", "Oh yeah", "Awesome", "Finally", "Arr", "Ahoy, matey"]
   return greetings[Math.floor(Math.random()*greetings.length)]
 }
 
