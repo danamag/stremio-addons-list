@@ -334,6 +334,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
           parsedAddonFooter = parsedAddonFooter.replace('{addon-url}', task.url)
           console.log('creating page for addon: ' + addonManifest.name)
           fs.writeFileSync(`${dir}/${slug(addonManifest.name)}.html`, parsedAddonHeader+parsedAddonPage+parsedAddonFooter)
+          task.labels.shift() // remove "all addons" prefix from labels
           listHtml.push(addonHtml)
           cb()
         }
