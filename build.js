@@ -50,8 +50,8 @@ const getPosts = () =>
 
 const syncLabels = (postId, proposedLabels, allLabels) => {
   const labels = proposedLabels.map(el => allLabels.find(elm => elm.name === el)).filter(el => !!el).map(el => el.id)
-  if (!labels.length) return;
-  request(
+  if (!labels.length) return Promise.reject(Error('error: could not find any label id in order to update issue labels'));
+  return request(
     `mutation {
   updateIssue(input: {id : "${postId}" , labelIds: ${JSON.stringify(labels)} }){
     issue {
