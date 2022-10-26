@@ -318,7 +318,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
             transportName: 'http',
             manifest: addonManifest,
           })
-          if (!oldAddonList.find(el => ((el || {}).manifest || {}).id === body.id)) {
+          if (oldAddonList.length && !oldAddonList.find(el => ((el || {}).manifest || {}).id === addonManifest.id)) {
             task.manifest = body
             newAddons.push(task)
           }
