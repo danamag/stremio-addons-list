@@ -96,6 +96,9 @@ h1 {
 .addon-button:hover {
   border: 1px solid rgba(0,0,0,0.3);
 }
+.last-addon-button {
+  margin-right: 0;
+}
 .addon-score-link {
   text-decoration: none;
   margin-right: 10px;
