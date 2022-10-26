@@ -231,6 +231,7 @@ body:
       options:
         - label: anime
         - label: asian drama
+        - label: bollywood
         - label: cartoons
         - label: debrid support
         - label: http streams
