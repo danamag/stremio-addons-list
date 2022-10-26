@@ -5,7 +5,7 @@ on:
   schedule:
     # Run at 0815 daily
     - cron: '15 8 * * *'
-jobs
+jobs:
   build:
     name: Request Netlify Webhook
     runs-on: ubuntu-latest
