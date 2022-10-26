@@ -8,7 +8,7 @@ To upvote / downvote an addon, find it in [the issues](https://github.com/danama
 
 To comment on an addon, find it in [the issues](https://github.com/danamag/stremio-addons-list/issues) and comment on the issue, this will update the comments on the site too. (you can also comment with GitHub on the website directly)
 
-To get notifications about new addons press the "Watch" button at the top right of this page. (you will receive email notifications for all new addon submissions)
+To get notifications about new addons press the "Watch" button at the top right of this page. (or [join the Discord](https://discord.gg/zNRf6YF), all new addons are announced on the #bots channel)
 
 
 ## How Can I Help?
@@ -37,6 +37,7 @@ So here's how you can help:
 - notifications for new addon releases (through GitHub followship)
 - search addons
 - show comment count for each addon in the list
+- Discord chat notifications for new addon releases
 
 
 ## How it works
