@@ -187,7 +187,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         else
           addonHtml = addonHtml.replace('{configure-button}', '')
         if (task.commentCount)
-          addonHtml = addonHtml.replace('{comments-button}', `<a href="${slug(body.name)}.html" class="addon-button"><ion-icon name="chatbubbles" class="gray-icon"></ion-icon> ${task.commentCount}</a>`)
+          addonHtml = addonHtml.replace('{comments-button}', `<a href="${slug(body.name)}.html" class="addon-button last-addon-button"><ion-icon name="chatbubbles" class="gray-icon"></ion-icon> ${task.commentCount}</a>`)
         else
           addonHtml = addonHtml.replace('{comments-button}', '')
         addonHtml = addonHtml.split('{addon-page}').join(`${slug(body.name)}.html`)
