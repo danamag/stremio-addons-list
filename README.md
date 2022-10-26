@@ -70,7 +70,7 @@ To create your own Stremio Addons list:
 - in Netlify: Sites -> (choose site) -> Site Settings -> Build & deploy -> Build settings: Base directory = "Not set" ; Build command = "npm run build" ; Publish directory = "out/"
 - create a GitHub API token: Settings -> Developer Settings (bottom left) -> Personal access tokens (left side) -> Tokens (classic) -> Generate new token (copy the token to clipboard)
 - add GitHub API token to Netlify: Sites -> (choose site) -> Site Settings -> Build & deploy -> Environment -> Environment Variables -> (add key called "TOKEN" and paste GitHUB API token)
-- create a Netlify Hook: Sites -> (choose site) -> Site Settings -> Build hooks -> Add build hook (and copy the URL from the hook)
+- create a Netlify Hook: Sites -> (choose site) -> Site Settings -> Build & deploy -> Continuous deployment -> Build hooks -> Add build hook (and copy the URL from the hook)
 - create a GitHub WebHook: Settings -> WebHooks (left side menu) -> Add WebHook (top right button): Payload URL = URL copied from Netlify ; choose "Let me select individual events" ; ensure "Active" is enabled
 - choose events that will trigger the website builds: Issues; Labels; Releases; Pushes (optional events: Issue comments)
 - press "Add webhook"
