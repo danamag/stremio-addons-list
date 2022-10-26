@@ -126,7 +126,9 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
               return
             }
             if (readingFor === 'language') {
-              meta[readingFor] = chunk.split('; ')[0].split(' (')[0].trim()
+              lang = chunk.split('; ')[0].split(' (')[0].trim()
+              if (lang !== '_No response_')
+                meta[readingFor] = lang
               return
             }
             meta[readingFor] += chunk
