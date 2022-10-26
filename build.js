@@ -1,7 +1,7 @@
 const { graphql } = require('@octokit/graphql')
 const fs = require('fs');
 const needle = require('needle')
-const async = require('async')
+const asyncQueue = require('async.queue')
 const slug = require('slug')
 const config = require('./config.json')
 
@@ -196,7 +196,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         return addonHtml
       }
 
-      const queue = async.queue((task, cb) => {
+      const queue = asyncQueue.queue((task, cb) => {
         const processManifest = addonManifest => {
           if (!addonManifest) {
             console.log('warning: could not find addon manifest for: ' + task.name)
