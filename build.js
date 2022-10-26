@@ -1,4 +1,5 @@
 const { graphql } = require('@octokit/graphql')
+const sendDiscordMessage = require('./discord')
 const fs = require('fs');
 const needle = require('needle')
 const asyncQueue = require('async.queue')
@@ -303,6 +304,8 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         return addonHtml
       }
 
+      const newAddons = []
+
       const queue = asyncQueue((task, cb) => {
         const processManifest = addonManifest => {
           if (!addonManifest) {
@@ -315,6 +318,10 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
             transportName: 'http',
             manifest: addonManifest,
           })
+          if (!oldAddonList.find(el => ((el || {}).manifest || {}).id === body.id)) {
+            task.manifest = body
+            newAddons.push(task)
+          }
           const addonHtml = addDataForAddon(listAddonHtml, addonManifest, task)
           task.labels = [{ color: 'A08C80', name: '<ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon> all addons' }].concat(task.labels)
           let parsedAddonPage = addDataForAddon(addonPageContent, addonManifest, task, true)
@@ -370,6 +377,8 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
       const parsedFooter = addDataForAddon(footer)
 
       queue.drain = () => {
+        if (process.env.DISCORD_WEBHOOK && newAddons.length)
+          sendDiscordMessage(newAddons)
         console.log('copying resources (styles, js, images)')
         fs.readdirSync('./resources').forEach(file => {
           const filePath = `./resources/${file}`
