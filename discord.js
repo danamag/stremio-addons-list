@@ -1,3 +1,4 @@
+const config = require('./config.json')
 const slug = require('slug')
 
 const discordGreeting = () => {
