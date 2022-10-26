@@ -64,6 +64,24 @@ const syncLabels = (postId, proposedLabels, allLabels) => {
   )
 }
 
+const closeIssueQueue = asyncQueue((task, cb) => {
+  closeIssue(task.postId).then(() => { cb() }).catch(() => { cb() })
+})
+
+const closeIssue = (postId) => {
+  // also adds label "very low score"
+  return request(
+    `mutation {
+  updateIssue(input: {id : "${postId}" , state: CLOSED, labelIds: ["LA_kwDOFVUyTM8AAAABGbO_Bw"] }){
+    issue {
+          id
+          title
+        }
+  }
+}
+`)
+}
+
 const syncLabelsQueue = asyncQueue((task, cb) => {
   syncLabels(task.postId, task.proposedLabels, task.allLabels).then(() => { cb() }).catch(() => { cb() })
 })
@@ -164,6 +182,8 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
           if (score > -10) {
             meta.score = score
             addons.push(meta)
+          } else {
+            closeIssueQueue.push({ postId: meta.postId })
           }
         }
       })
