@@ -19,11 +19,12 @@ const getPosts = () =>
     repository(name: "${config.repository}", owner: "${config.author}") {
       issues(states: [OPEN], first: 100) {
         nodes {
+          id
           title
           number
           createdAt
           url
-          bodyText
+          body
           labels(first: 5) {
             nodes {
               color
@@ -46,6 +47,26 @@ const getPosts = () =>
   }
 `
   ).then((data) => data.repository.issues.nodes)
+
+const syncLabels = (postId, proposedLabels, allLabels) => {
+  const labels = proposedLabels.map(el => allLabels.find(elm => elm.name === el)).filter(el => !!el).map(el => el.id)
+  if (!labels.length) return;
+  request(
+    `mutation {
+  updateIssue(input: {id : "${postId}" , labelIds: ${JSON.stringify(labels)} }){
+    issue {
+          id
+          title
+        }
+  }
+}
+`
+  )
+}
+
+const syncLabelsQueue = asyncQueue((task, cb) => {
+  syncLabels(task.postId, task.proposedLabels, task.allLabels).then(() => { cb() }).catch(() => { cb() })
+})
 
 let oldAddonList = []
 let preferCached = false
@@ -83,17 +104,31 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
           ups: 0,
           downs: 0,
           commentCount: 0,
-          issueUrl: addon.url
+          issueUrl: addon.url,
+          proposedLabels: [],
+          language: 'Multilingual',
         }
-        const chunks = (addon.bodyText || '').split('\n')
+        const chunks = (addon.body || '').split('\n')
         let readingFor = false
         chunks.forEach(chunk => {
-          if (chunk.startsWith('Addon Manifest URL'))
+          if (chunk === '### Addon Manifest URL')
             readingFor = 'url'
-          else if (chunk.startsWith('Addon Description'))
+          else if (chunk === '### Addon Description')
             readingFor = 'description'
+          else if (chunk === '### Language of Content')
+            readingFor = 'language'
+          else if (chunk === '### Choose Labels')
+            readingFor = 'labels'
           else if (readingFor && chunk) {
             if (readingFor === 'url' && meta.url.endsWith('/manifest.json')) return;
+            if (readingFor === 'labels' && chunk.toLowerCase().startsWith('- [x] ')) {
+              meta.proposedLabels.push(chunk.replace('- [X] ','').replace('- [x] ', '').trim())
+              return
+            }
+            if (readingFor === 'language') {
+              meta[readingFor] = chunk.split('; ')[0].split(' (')[0].trim()
+              return
+            }
             meta[readingFor] += chunk
             meta[readingFor] = meta[readingFor].trim()
           }
@@ -123,10 +158,29 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
           })
           meta.issueNumber = addon.number
           meta.commentCount = (addon.comments || {}).totalCount || 0
+          meta.postId = addon.id
           if (score > -10) {
             meta.score = score
             addons.push(meta)
           }
+        }
+      })
+
+      // ensure that labels are the same as proposed by user submitting
+      addons.forEach(addon => {
+        if (addon.postId && addon.proposedLabels.length) {
+
+          // we only sync labels on new issues, that only have the default "misc" label set
+          if (addon.labels.length === 1 && addon.labels[0].name === 'misc') {}
+          else return
+
+          const diff = addon.proposedLabels.filter(x => !addon.labels.map(label => label.name).includes(x))
+
+          if (diff.length) {
+            // proposed labels are different than issue labels
+            syncLabelsQueue.push({ postId: addon.postId, proposedLabels: addon.proposedLabels, allLabels: all_labels })
+          }
+
         }
       })
 
