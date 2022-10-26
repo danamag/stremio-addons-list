@@ -7,7 +7,7 @@ const discordGreeting = () => {
 
 const sendDiscordMessage = (addons) => {
   const payload = {
-      content: `${discordGreeing()}, ${addons.length > 1 ? addons.length+' new addons' : 'a new addon'} appeared in the catalog!`,
+      content: `${discordGreeting()}, ${addons.length > 1 ? addons.length+' new addons' : 'a new addon'} appeared in the catalog!`,
       embeds: []
   }
   addons.forEach(addon => {
