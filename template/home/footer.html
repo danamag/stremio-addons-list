@@ -19,6 +19,7 @@
                 $('form#searchform').submit(function() {
                     const query = $("input#sbox").val().toLowerCase()
                     $("input#sbox").blur()
+                    window.history.replaceState('', '', window.location.href.replace(window.location.search || '', '') + '?q=' + encodeURIComponent(query))
                     window.iso.arrange({
                       filter: function(itemElem) {
                         return $(itemElem).find('.addon-details .addon-title a').text().toLowerCase().includes(query)
@@ -58,17 +59,14 @@
             $(document).ready(function() {
                 $('.labels-list .label').click(function() {
                     if ($("input#sbox").val()) $("input#sbox").val('')
-                    if ((window.location || {}).search)
-                        window.history.replaceState('', '', window.location.href.replace(window.location.search, ''))
                     $('.labels-list .label.selected').removeClass('selected')
                     $(this).addClass('selected')
                     const label = $(this).text().split(' ').join('-')
+                    window.history.replaceState('', '', window.location.href.replace(window.location.search || '', '') + (label === 'show-all' ? '' : '?label=' + label))
                     window.iso.arrange({ filter: label === 'show-all' ? '*' : '.'+label })
                 })
                 $('.addon-types .label').click(function() {
                     if ($("input#sbox").val()) $("input#sbox").val('')
-                    if ((window.location || {}).search)
-                        window.history.replaceState('', '', window.location.href.replace(window.location.search, ''))
                     window.scrollTo(0, 0)
                     $('.labels-list .label.selected').removeClass('selected')
                     const pressedLabel = $(this).text()
@@ -77,6 +75,7 @@
                             $(this).addClass('selected')
                     })
                     const label = $(this).text().split(' ').join('-')
+                    window.history.replaceState('', '', window.location.href.replace(window.location.search || '', '') + '?label=' + label )
                     window.iso.arrange({ filter: '.'+label })
                 })
                 loadIsotope()
