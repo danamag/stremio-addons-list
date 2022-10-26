@@ -15,6 +15,14 @@ body:
       placeholder: ex. https://addon.server.com/manifest.json
     validations:
       required: true
+  - type: textarea
+    id: addon-description
+    attributes:
+      label: Addon Description
+      description: Describe the addon you are submitting.
+      placeholder: My amazing new addon!
+    validations:
+      required: false
   - type: dropdown
     id: lang
     attributes:
@@ -233,11 +241,3 @@ body:
         - label: torrents
         - label: tv shows
         - label: video games
-  - type: textarea
-    id: addon-description
-    attributes:
-      label: Addon Description
-      description: Describe the addon you are submitting.
-      placeholder: My amazing new addon!
-    validations:
-      required: false
