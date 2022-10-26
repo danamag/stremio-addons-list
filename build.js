@@ -137,7 +137,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         })
         if (!meta.url.startsWith('https://') || !meta.url.endsWith('/manifest.json'))
           meta.url = ''
-        if (meta.description === 'No response')
+        if (meta.description === '_No response_')
           meta.description = ''
         if (meta.name && meta.url) {
           const reactionGroups = addon.reactionGroups || []
@@ -223,7 +223,10 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         addonHtml = addonHtml.replace('{addon-id}', body.id)
         addonHtml = addonHtml.replace('{addon-version}', body.version)
         addonHtml = addonHtml.split('{addon-title}').join(body.name)
-        addonHtml = addonHtml.split('{addon-description}').join(body.description)
+        if (body.description)
+          addonHtml = addonHtml.split('{addon-description}').join(body.description)
+        else
+          addonHtml = addonHtml.split('{addon-description}').join('')
         const lowerCaseName = body.name.toLowerCase()
         addonHtml = addonHtml.replace('{addon-keywords}', [lowerCaseName, lowerCaseName + ' down', lowerCaseName + ' down or just me', lowerCaseName + ' site down', lowerCaseName + ' not working', lowerCaseName + ' not found', 'stremio addons', 'addons list'])
         addonHtml = addonHtml.split('{addon-logo}').join(body.logo || body.icon)
