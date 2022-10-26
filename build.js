@@ -247,6 +247,10 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         addonHtml = addonHtml.split('{addon-page}').join(`${slug(body.name)}.html`)
         addonHtml = addonHtml.split('{issue-url}').join(task.issueUrl)
         addonHtml = addonHtml.split('{repo-name}').join(config.author+'/'+config.repository)
+        if (task.language && task.language !== 'Multilingual')
+          addonHtml = addonHtml.split('{addon-language}').join(`<div class="addon-language">${task.language} Content</div>`)
+        else
+          addonHtml = addonHtml.split('{addon-language}').join('')
         return addonHtml
       }
 
