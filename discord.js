@@ -39,7 +39,6 @@ const sendDiscordMessage = (addons) => {
     payload.embeds.push(embed)
   })
   const needleOpts = Object.assign({}, config.needle)
-console.log(payload)
   needleOpts.json = true
   console.log(`sending discord message about ${addons.length} new addons`)
   needle.post(process.env.DISCORD_WEBHOOK, payload, needleOpts, (err, resp, body) => {
