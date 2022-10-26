@@ -230,6 +230,8 @@ body:
       description: Choose the labels that best describe your addon.
       options:
         - label: anime
+        - label: asian drama
+        - label: cartoons
         - label: debrid support
         - label: http streams
         - label: live tv
@@ -238,6 +240,7 @@ body:
         - label: movies
         - label: music
         - label: nsfw
+        - label: podcasts
         - label: radios
         - label: subtitles
         - label: torrents
