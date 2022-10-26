@@ -321,7 +321,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
           })
           if (!firstOne || oldAddonList.length && !oldAddonList.find(el => ((el || {}).manifest || {}).id === addonManifest.id)) {
             firstOne = true
-            task.manifest = body
+            task.manifest = addonManifest
             newAddons.push(task)
           }
           const addonHtml = addDataForAddon(listAddonHtml, addonManifest, task)
