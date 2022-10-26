@@ -78,6 +78,10 @@ To create your own Stremio Addons list:
 - on Github go to: `Issues` > `Labels` (top right button) > (add labels that you need, delete labels that you don't need) (if you want to use the default labels, check the `/.github/ISSUE_TEMPLATE/submit-addon.yaml` file to see the list)
 - open `/.github/ISSUE_TEMPLATE/submit-addon.yaml` and edit the labels to match the ones you use for your addons list (if not using the default labels)
 
-Note: by default this project only allows submitting issues with the "Publish Stremio Addon" issue template, if you want to allow blank issues too, then edit the `/.github/ISSUE_TEMPLATE/config.yml` file and set `blank_issues_enabled: true`
-
 You're done!
+
+
+### Extras
+
+- you can also set the "DISCORD_WEBHOOK" environment variable in Netlify, this will make it notify on Discord every time a new addon is published (a new issue is created)
+- by default this project only allows submitting issues with the "Publish Stremio Addon" issue template, if you want to allow blank issues too, then edit the `/.github/ISSUE_TEMPLATE/config.yml` file and set `blank_issues_enabled: true`
