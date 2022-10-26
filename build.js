@@ -13,11 +13,15 @@ const request = graphql.defaults({
   },
 })
 
-const getPosts = () =>
+const getPosts = (after) =>
   request(
     `{
     repository(name: "${config.repository}", owner: "${config.author}") {
-      issues(states: [OPEN], first: 100) {
+      issues(states: [OPEN], first: 100${after ? ', after: "' + after + '"' : ''}) {
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
         nodes {
           id
           title
@@ -46,7 +50,25 @@ const getPosts = () =>
     }
   }
 `
-  ).then((data) => data.repository.issues.nodes)
+  ).then((data) => data.repository.issues)
+
+const getAllPosts = () => {
+  return new Promise((resolve, reject) => {
+    const allItems = []
+    const loopPages = after => {
+      getPosts(after).then(data => {
+        data = data || {}
+        data.nodes = data.nodes || []
+        data.nodes.forEach(node => allItems.push(node))
+        if ((data.pageInfo || {}).hasNextPage && data.pageInfo.endCursor)
+          loopPages(data.pageInfo.endCursor)
+        else
+          resolve(allItems)
+      })
+    }
+    loopPages()
+  })
+}
 
 const syncLabels = (postId, proposedLabels, allLabels) => {
   const labels = proposedLabels.map(el => allLabels.find(elm => elm.name === el)).filter(el => !!el).map(el => el.id)
@@ -110,7 +132,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
     } else {
       console.log('warning: could not load old addon catalog')
     }
-    getPosts().then(data => {
+    getAllPosts().then(data => {
       const addons = []
       const addons_collection = []
       const all_labels = [{ color: 'A08C80', name: 'show all' }]
