@@ -19,7 +19,6 @@ So here's how you can help:
 - add addons that are working (and not yet) in the list (by creating a new GitHub issue)
 - give a thumbs up / down to the addons that are already in the list (through GitHub comment reactions)
 - comment and discuss addons (through the GitHub commenting system)
-- propose new things and get involved! all github issues that are not created based on the "Publish Stremio Addon" issue template will not be added to the addon list, so you can still create issues normally for feature requests and bug reports!
 
 
 ## Project Features
@@ -55,7 +54,8 @@ The site is currently refreshed based on the following triggers:
 - a new release was created
 - a new commit was made
 - a label was created, edited or removed
-- a new comment was made to an issue (to update comment count / votes)
+- a new comment was made to an issue (to update comment count)
+- daily at 08:15 by GitHub Actions (to update votes if no other event did)
 
 
 ## Fork me
@@ -74,5 +74,8 @@ To create your own Stremio Addons list:
 - create a GitHub WebHook: Settings -> WebHooks (left side menu) -> Add WebHook (top right button): Payload URL = URL copied from Netlify ; choose "Let me select individual events" ; ensure "Active" is enabled
 - choose events that will trigger the website builds: Issues; Labels; Releases; Pushes (optional events: Issue comments)
 - press "Add webhook"
+- add GitHub Repository Secret for Netlify Hook: Repository Settings -> Secrets (left side menu) -> Actions -> New repository secret -> Name = "NETLIFY_BUILD_WEBHOOK" ; Paste URL copied from Netlify as Secret (this is needed for the GitHub Action from `/.github/workflows/main.yml` which will do a daily build to update votes)
+- on Github go to Issues -> Labels (top right button) -> (add labels that you need, delete labels that you don't need) (if you want to use the default labels, check the `/.github/ISSUE_TEMPLATE/submit-addon.yaml` file to see the list)
+- open `/.github/ISSUE_TEMPLATE/submit-addon.yaml` and edit the labels to match the ones you use for your addons list (if not using the default labels)
 
 You're done!
