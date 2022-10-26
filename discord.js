@@ -1,5 +1,6 @@
 const config = require('./config.json')
 const slug = require('slug')
+const needle = require('needle')
 
 const discordGreeting = () => {
   const greetings = ["Hey", "Sup", "Yo", "Knock knock", "Attention", "Yesss", "Oh yeah", "Awesome", "Finally"]
