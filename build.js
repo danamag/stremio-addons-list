@@ -196,7 +196,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
         return addonHtml
       }
 
-      const queue = asyncQueue.queue((task, cb) => {
+      const queue = asyncQueue((task, cb) => {
         const processManifest = addonManifest => {
           if (!addonManifest) {
             console.log('warning: could not find addon manifest for: ' + task.name)
@@ -262,7 +262,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
       
       const parsedFooter = addDataForAddon(footer)
 
-      queue.drain(() => {
+      queue.drain = () => {
         console.log('copying resources (styles, js, images)')
         fs.readdirSync('./resources').forEach(file => {
           const filePath = `./resources/${file}`
@@ -283,7 +283,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
           console.log('persisting last known update time because cache was preferred')
           fs.writeFileSync(`${dir}/lastUpdate.json`, JSON.stringify({ time: lastKnownUpdateTime }))
         }
-      })
+      }
 
       addons.sort((a,b) => { return a.score > b.score ? -1 : 1 })
 
