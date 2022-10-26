@@ -138,6 +138,8 @@ h1 {
 }
 .labels-list {
   text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
 }
 .addon-title a {
   font-weight: bold;
@@ -400,5 +402,10 @@ span#noEasy:hover {
   }
   div#searchBox #searchform {
     max-width: 100%;
+  }
+  .labels-list {
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
