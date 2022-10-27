@@ -1,4 +1,4 @@
-const config = require('./config.json')
+const config = require('./config')
 const slug = require('slug')
 const needle = require('needle')
 
