@@ -49,7 +49,7 @@ getCached().then(cached => {
       }
     })
 
-    const dir = './out';
+    const dir = config['build-dir']
 
     if (!fs.existsSync(dir)) fs.mkdirSync(dir)
 
