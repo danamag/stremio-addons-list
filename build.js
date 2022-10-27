@@ -7,12 +7,10 @@ const config = require('./config.json')
 const graphql = require('./graphql')
 const getCached = require('./cache')
 
-let preferCached = false
-
 getCached().then(cached => {
   if (cached.time && cached.time > Date.now() - 12 * 60 * 60 * 1000) {
     console.log('cache will be preferred over refreshing manifest data')
-    preferCached = true
+    cached.prefer = true
   }
   graphql.getAllPosts().then(data => {
     const addons = []
@@ -221,7 +219,7 @@ getCached().then(cached => {
         let cachedManifest
         cached.catalog.some(oldAddon => {
           if (oldAddon.transportUrl === task.url) {
-            if (!preferCached)
+            if (!cached.prefer)
               console.log('warning: using cached manifest for: ' + task.name)
             cachedManifest = oldAddon.manifest
             return true
@@ -229,7 +227,7 @@ getCached().then(cached => {
         })
         return cachedManifest
       }
-      if (preferCached) {
+      if (cached.prefer) {
         const cachedManifest = findCachedManifest()
         if (cachedManifest) {
           processManifest(cachedManifest)
@@ -274,7 +272,7 @@ getCached().then(cached => {
       fs.writeFileSync(`${dir}/catalog.json`, JSON.stringify(addons_collection))
       console.log('creating home page')
       fs.writeFileSync(`${dir}/index.html`, header+listHtml.join('')+parsedFooter)
-      if (!preferCached) {
+      if (!cached.prefer) {
         console.log('saving timestamp of last update to json')
         fs.writeFileSync(`${dir}/lastUpdate.json`, JSON.stringify({ time: Date.now() }))
       } else {
