@@ -1,12 +1,12 @@
-const sendDiscordMessage = require('./discord')
-const fs = require('fs');
+const fs = require('fs')
 const needle = require('needle')
 const asyncQueue = require('async.queue')
 const slug = require('slug')
 const config = require('./config')
-const graphql = require('./graphql')
-const getCached = require('./cache')
-const processHtml = require('./html')
+const graphql = require('./lib/graphql')
+const getCached = require('./lib/cache')
+const processHtml = require('./lib/html')
+const sendDiscordMessage = require('./lib/discord')
 
 getCached().then(cached => {
   if (cached.time && cached.time > Date.now() - config['prefer-cached-for']) {
