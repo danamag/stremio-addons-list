@@ -1,0 +1,112 @@
+<html>
+<head>
+  <meta name="description" content="{addon-description}">
+  <meta name="keywords" content="{addon-keywords}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="{addon-title} - {addon-page-title-append}">
+  <meta property="og:description" content="{addon-description}">
+  <meta name="application-name" content="{addon-title} - {addon-page-title-append}">
+  <meta property="og:image" content="{addon-logo}">
+  <link rel="icon" type="image/png" href="{addon-logo}">
+  <title>{addon-title} - {addon-page-title-append}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="ionicons.5.5.2.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="isotope.3.0.6.pkgd.min.js"></script>
+  <script src="jquery-3.6.1.min.js"></script>
+  <script src="isMobile.js"></script>
+</head>
+<body>
+  <div class="header-note"><b>Not all community addons are available in Stremio's internal addon catalog.</b><div class="header-note-space"></div>To load the community curated addons list in Stremio on your current device (presumes you have Stremio installed), simply press <a href="stremio://{home-netlify-domain}/catalog.json">this link</a>!</div>
+  <h1>{addon-title} v{addon-version}</h1>
+  <div class="addon-types">{addon-types}</div>
+  <div class="addon-list">
+    <div class="addon-list-item" id="{addon-id}">
+        <div class="addon-image">
+            <div class="addon-logo" style="background-image: url({addon-logo})"></div>
+        </div>
+        <div class="addon-details">
+            {addon-language}
+            <div class="addon-description">
+                {addon-description}
+            </div>
+            {install-button}
+            {configure-button}
+            <a href="{issue-url}" class="addon-score-link" target="_blank">
+                <div class="addon-score{addons-score-faded}">
+                    <span class="score-value" style="display: none">{addon-score}</span>
+                    <ion-icon name="thumbs-up" class="orange-icon"></ion-icon> {addon-ups}<div class="score-distance"></div><ion-icon name="thumbs-down" class="orange-icon thumbs-down"></ion-icon> {addon-downs}
+                </div>
+            </a>
+        </div>
+    </div>
+  </div>
+  <div class="status-bar">
+      <div class="box loader-06"></div>
+  </div>
+  <script src="https://utteranc.es/client.js"
+    repo="{repo-name}"
+    issue-number="{issue-number}"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <div class="end-page-space"></div>
+  <a class="addon-button footer-button" href="https://{home-netlify-domain}/">All Stremio Addons</a><a class="addon-button footer-button" href="https://github.com/{repo-name}/blob/main/README.md#how-can-i-help" target="_blank">How Can I Help?</a><a class="addon-button footer-button" href="https://github.com/{repo-name}/blob/main/README.md#how-it-works" target="_blank">How It Works</a><a class="addon-button footer-button" href="https://github.com/{repo-name}/issues/new?assignees=&labels=misc&template=submit-addon.yaml&title=Addon+Name" target="_blank">Publish Addon</a><a class="addon-button footer-button" href="https://github.com/{repo-name}/" target="_blank">Source Code</a><a class="addon-button footer-button" href="https://reddit.com/r/StremioAddons" target="_blank">Reddit</a><a class="addon-button footer-button" href="https://discord.gg/zNRf6YF" target="_blank">Discord</a><a class="addon-button footer-button" href="https://stremio.com/downloads" target="_blank">Download Stremio</a>
+  <div class="end-page-space"></div>
+  <div id="searchBox" class="mobile-form footer-search">
+    <form action="/" class="search-form" id="searchform" method="get">
+      <span id="noEasy">
+         <input class="sb-search-submit" type="submit" value="">
+         <ion-icon name="search"></ion-icon>
+      </span>
+      <input id="sbox" name="q" autocomplete="off" onblur="if (this.placeholder == '') {this.placeholder = 'Search addons';}" onfocus="this.value = ''; if (this.placeholder == 'Search addons') {this.placeholder = '';}" placeholder="Search addons" type="text" x-webkit-speech="">
+    </form>
+  </div>
+  <div class="end-page-space"></div>
+  <div class="footer-note">Built with ❤️, the Stremio Addons website is curated by the community!</div>
+  <script>
+      $(document).ready(function() {
+          const requestStartTime = Date.now()
+          fetch('{addon-url}')
+            .then((response) => response.json())
+            .then((data) => {
+              if (data && data.id && data.version) {
+                  if (Date.now() - requestStartTime > 10 * 1000) {
+                          // consider very slow if it takes more than 10s
+                          $('.status-bar').css('background-color', 'red')
+                          $('.status-bar').css('color', 'white')
+                          $('.status-bar').html('Addon status: Online (but very slow)')
+                  } else if (Date.now() - requestStartTime > 5 * 1000) {
+                          // consider slow if it takes more than 5s
+                          $('.status-bar').css('background-color', 'orange')
+                          $('.status-bar').css('color', 'white')
+                          $('.status-bar').html('Addon status: Online (but slow)')
+                  } else {
+                          $('.status-bar').css('background-color', 'green')
+                          $('.status-bar').css('color', 'white')
+                          $('.status-bar').html('Addon status: Online')
+                  }
+              } else {
+                  $('.status-bar').css('background-color', 'red')
+                  $('.status-bar').css('color', 'white')
+                  $('.status-bar').html('Addon status: Offline')
+              }
+            }).catch(e => {
+              $('.status-bar').css('background-color', 'red')
+              $('.status-bar').css('color', 'white')
+              $('.status-bar').html('Addon status: Offline')
+            });
+      })
+      function copyLink(event, link) {
+          let copyLinkMsg = 'Copy Share Link to Clipboard: Ctrl+C, Enter\nPaste in the Search of the Stremio App'
+          if (window.isMobile)
+              copyLinkMsg = 'Copy Share Link to Clipboard: Long Press Text, Select Copy\nPaste in the Search of the Stremio App'
+          window.prompt(copyLinkMsg, link)
+      }
+  </script>
+</body>
+</html>
