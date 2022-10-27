@@ -149,7 +149,6 @@ getCached().then(cached => {
 
         const labelsForHomeHeader = task.labels.map(el => `<span class="label label-addon-page" style="background-color: #${el.color}">${el.name}</span>`).join('')
         const labelsForHomeAddon = task.labels.map(el => `<span class="label label-small" style="background-color: #${el.color}">${el.name}</span>`).join('')
-        const labelsForAddonPage = task.labels.map(el => `<${'a href="https://' + config['netlify-domain'] + '/' + (el.name === '<ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon> all addons' ? '' : '?label=' + el.name.split(' ').join('-')) + '"'} class="label label-addon-page" style="background-color: #${el.color}">${el.name}</a>`).join('')
         
         const map = {
           '{home-netlify-domain}': config['netlify-domain'],
@@ -163,7 +162,6 @@ getCached().then(cached => {
           '{addon-logo}': addonManifest.logo || addonManifest.icon,
           '{addon-types}': labelsForHomeHeader,
           '{addon-types-small}': labelsForHomeAddon,
-          '{addon-types-links}': labelsForAddonPage,
           '{addon-score}': task.score,
           '{addon-ups}': task.ups,
           '{addon-downs}': task.downs,
@@ -182,9 +180,8 @@ getCached().then(cached => {
         const addonHtml = processHtml('homePageAddon', map)
 
         task.labels = [{ color: 'A08C80', name: '<ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon> all addons' }].concat(task.labels)
-        labelsHtml = task.labels.map(el => el.name.split(' ').join('-')).join(' ')
-        if (labelsHtml) labelsHtml = ' ' + labelsHtml
-        map['{labels}'] = labelsHtml
+        const labelsForAddonPage = task.labels.map(el => `<${'a href="https://' + config['netlify-domain'] + '/' + (el.name === '<ion-icon class="back-arrow" name="arrow-back-outline"></ion-icon> all addons' ? '' : '?label=' + el.name.split(' ').join('-')) + '"'} class="label label-addon-page" style="background-color: #${el.color}">${el.name}</a>`).join('')
+        map['{addon-types-links}'] = labelsForAddonPage
         
         const parsedAddonPage = processHtml('addonPage', map)
 
