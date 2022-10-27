@@ -1,4 +1,4 @@
-{
+module.exports = {
 	"repository": "stremio-addons-list",
 	"author": "danamag",
 	"netlify-domain": "stremio-addons.netlify.app",
