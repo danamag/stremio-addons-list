@@ -4,6 +4,7 @@ module.exports = {
 	"author": "danamag",
 	"netlify-domain": "stremio-addons.netlify.app",
 	"page-title": "Stremio Community Addons List",
+	// images are located in ./resources/
 	"meta-favicon": "stremio_community_logo.png",
 	"meta-title": "Stremio Addons - Community List",
 	"meta-description": "Stremio community currated addons list, find the best Stremio addons here.",
