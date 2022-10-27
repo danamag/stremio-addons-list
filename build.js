@@ -3,7 +3,7 @@ const fs = require('fs');
 const needle = require('needle')
 const asyncQueue = require('async.queue')
 const slug = require('slug')
-const config = require('./config.json')
+const config = require('./config')
 const graphql = require('./graphql')
 const getCached = require('./cache')
 
