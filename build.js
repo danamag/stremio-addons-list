@@ -22,6 +22,10 @@ getCached().then(cached => {
       const meta = issueToMeta(addon)
       if (meta) {
         if (meta.score > config['minimum-score']) {
+          meta.labels.forEach(label => {
+            if (label.name && !all_labels.some(el => label.name === el.name))
+              all_labels.push(label)
+          })
           addons.push(meta)
         } else {
           graphql.closeIssueQueue.push({ postId: meta.postId })
