@@ -173,7 +173,7 @@ getCached().then(cached => {
           '{comments-button}': commentsButton,
           '{addon-page}': `${slug(addonManifest.name)}.html`,
           '{issue-url}': task.issueUrl,
-          '{issue-number}': task.issueNumber
+          '{issue-number}': task.issueNumber,
           '{repo-name}': config.author+'/'+config.repository,
           '{addon-language}': language,
           '{addon-url}': task.url,
