@@ -1,11 +1,12 @@
 const fs = require('fs')
+const slug = require('slug')
 const needle = require('needle')
 const asyncQueue = require('async.queue')
-const slug = require('slug')
 const config = require('./config')
 const graphql = require('./lib/graphql')
 const getCached = require('./lib/cache')
 const processHtml = require('./lib/html')
+const issueToMeta = require('./lib/issueToMeta')
 const sendDiscordMessage = require('./lib/discord')
 
 getCached().then(cached => {
@@ -18,72 +19,9 @@ getCached().then(cached => {
     const addons_collection = []
     const all_labels = [{ color: 'A08C80', name: 'show all' }]
     data.forEach(addon => {
-      const meta = {
-        name: addon.title,
-        url: '',
-        description: '',
-        ups: 0,
-        downs: 0,
-        commentCount: 0,
-        issueUrl: addon.url,
-        proposedLabels: [],
-        language: 'Multilingual',
-      }
-      const chunks = (addon.body || '').split(/\r?\n/)
-      let readingFor = false
-      chunks.forEach(chunk => {
-        if (chunk === '### Addon Manifest URL')
-          readingFor = 'url'
-        else if (chunk === '### Addon Description')
-          readingFor = 'description'
-        else if (chunk === '### Language of Content')
-          readingFor = 'language'
-        else if (chunk === '### Choose Labels')
-          readingFor = 'labels'
-        else if (readingFor && chunk) {
-          if (readingFor === 'url' && meta.url.endsWith('/manifest.json')) return;
-          if (readingFor === 'labels' && chunk.toLowerCase().startsWith('- [x] ')) {
-            meta.proposedLabels.push(chunk.replace('- [X] ','').replace('- [x] ', '').trim())
-            return
-          }
-          if (readingFor === 'language') {
-            lang = chunk.split('; ')[0].split(' (')[0].trim()
-            if (lang !== '_No response_')
-              meta[readingFor] = lang
-            return
-          }
-          meta[readingFor] += chunk
-          meta[readingFor] = meta[readingFor].trim()
-        }
-      })
-      if (!meta.url.startsWith('https://') || !meta.url.endsWith('/manifest.json'))
-        meta.url = ''
-      if (meta.description === '_No response_')
-        meta.description = ''
-      if (meta.name && meta.url) {
-        const reactionGroups = addon.reactionGroups || []
-        meta.labels = (addon.labels || {}).nodes || []
-        meta.labels.forEach(label => {
-          if (label.name && !all_labels.some(el => label.name === el.name))
-            all_labels.push(label)
-        })
-        let score = 0
-        reactionGroups.forEach(group => {
-          if ((group.users || {}).totalCount) {
-            if (group.content === 'THUMBS_UP') {
-              meta.ups = group.users.totalCount
-              score += group.users.totalCount
-            } else if (group.content === 'THUMBS_DOWN') {
-              meta.downs = group.users.totalCount
-              score -= group.users.totalCount
-            }
-          }
-        })
-        meta.issueNumber = addon.number
-        meta.commentCount = (addon.comments || {}).totalCount || 0
-        meta.postId = addon.id
-        if (score > config['minimum-score']) {
-          meta.score = score
+      const meta = issueToMeta(addon)
+      if (meta) {
+        if (meta.score > config['minimum-score']) {
           addons.push(meta)
         } else {
           graphql.closeIssueQueue.push({ postId: meta.postId })
