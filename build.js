@@ -8,7 +8,7 @@ const graphql = require('./graphql')
 const getCached = require('./cache')
 
 getCached().then(cached => {
-  if (cached.time && cached.time > Date.now() - 12 * 60 * 60 * 1000) {
+  if (cached.time && cached.time > Date.now() - config['prefer-cached-for']) {
     console.log('cache will be preferred over refreshing manifest data')
     cached.prefer = true
   }
