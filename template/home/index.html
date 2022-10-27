@@ -53,6 +53,8 @@
           $('form#searchform').submit(function() {
               const query = $("input#sbox").val().toLowerCase()
               $("input#sbox").blur()
+              $('.labels-list .label.selected').removeClass('selected')
+              $($('.labels-list .label.selected')[0]).addClass('selected')
               window.history.replaceState('', '', window.location.href.replace(window.location.search || '', '') + '?q=' + encodeURIComponent(query))
               window.iso.arrange({
                 filter: function(itemElem) {
