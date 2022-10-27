@@ -17,5 +17,7 @@ module.exports = {
 	// optional label id, if available it will add a label when closing an issue due to low score, this id adds the label "very low score"
 	"label-id-for-close-issues": "LA_kwDOFVUyTM8AAAABGbO_Bw",
 	// sane timeouts for needle so it doesn't get stuck in a request
-	"needle": { "open_timeout": 5000, "response_timeout": 5000, "read_timeout": 5000, "follow_max": 5 }
+	"needle": { "open_timeout": 5000, "response_timeout": 5000, "read_timeout": 5000, "follow_max": 5 },
+	// output folder for build
+	"build-dir": "./out"
 }
