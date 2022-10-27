@@ -70,7 +70,6 @@ h1 {
 }
 .addon-types {
   display: inline;
-  margin-left: 5px;
   top: -2px;
   position: relative;
 }
@@ -145,6 +144,8 @@ h1 {
   font-weight: bold;
   color: black;
   text-decoration: none;
+  margin: 4px 5px 5px 0;
+  display: inline-block;
 }
 .addon-title a:hover {
   text-decoration: underline;
@@ -401,7 +402,7 @@ span#noEasy:hover {
     max-width: 100% !important;
   }
   div#searchBox #searchform {
-    max-width: 100%;
+    max-width: calc(100% - 2px);
   }
   .labels-list {
     text-align: center;
