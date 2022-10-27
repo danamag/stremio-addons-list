@@ -99,7 +99,7 @@ needle.get(`https://${config['netlify-domain']}/lastUpdate.json`, config.needle,
           meta.issueNumber = addon.number
           meta.commentCount = (addon.comments || {}).totalCount || 0
           meta.postId = addon.id
-          if (score > -10) {
+          if (score > config['minimum-score']) {
             meta.score = score
             addons.push(meta)
           } else {
