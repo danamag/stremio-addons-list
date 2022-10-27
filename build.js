@@ -77,7 +77,7 @@ getCached().then(cached => {
         if (labelsHtml) labelsHtml = ' ' + labelsHtml
 
         const lowerCaseName = addonManifest.name.toLowerCase()
-        const keywordsForAddonPage = [lowerCaseName, lowerCaseName + ' down', lowerCaseName + ' down or just me', lowerCaseName + ' site down', lowerCaseName + ' not working', lowerCaseName + ' not found', 'stremio addons', 'addons list']
+        const keywordsForAddonPage = config['addon-keywords'].split('{}').join(lowerCaseName)
 
         const installButton = !(addonManifest.behaviorHints || {}).configurationRequire ? '<a class="addon-button install-button" href="'+task.url.replace('https://','stremio://')+'">Install</a> <a class="addon-button copy-link-button" href="#" onClick="copyLink(event, \''+task.url+'\')">Copy Link</a>' : ''
         const configButton = (addonManifest.behaviorHints || {}).configurable ? '<a class="addon-button configure-button" href="'+task.url.replace('/manifest.json','/configure')+'" target="_blank">Configure</a>' : ''
