@@ -90,7 +90,7 @@ const closeIssue = (postId) => {
   // also adds label "very low score"
   return request(
     `mutation {
-  updateIssue(input: {id : "${postId}" , state: CLOSED, labelIds: ["LA_kwDOFVUyTM8AAAABGbO_Bw"] }){
+  updateIssue(input: {id : "${postId}" , state: CLOSED${config['label-id-for-close-issues'] ? ', labelIds: ["' + config['label-id-for-close-issues'] + '"]' : ''} }){
     issue {
           id
           title
