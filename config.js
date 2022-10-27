@@ -9,6 +9,8 @@ module.exports = {
 	"meta-title": "Stremio Addons - Community List",
 	"meta-description": "Stremio community currated addons list, find the best Stremio addons here.",
 	"meta-keywords": "stremio addons, no streams, addons, torrentio, piratebay, addons list, what addons",
+	// for the addon page, {} is replaced with the addon name
+	"addon-keywords": "{}, {} down, {} down or just me, {} site down, {} not working, {} not found, stremio addons, addons list",
 	// this gets appended to the title, ex: "TMDB Addon - Stremio Addons"
 	"meta-addon-title-append": "Stremio Addons",
 	// for 12h since last full update, it will prefer cached manifests over retrieving new ones
