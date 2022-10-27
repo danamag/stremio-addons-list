@@ -66,7 +66,7 @@ This project is available under the MIT license and uses exclusively free resour
 To create your own Stremio Addons list:
 - fork this project
 - enable issues for your fork: `Settings` > `Features` > `Issues`
-- edit `/config.json` with your repo information
+- edit `/config.js` with your repo information
 - connect Netlify to your GitHub fork (on `main` branch)
 - in Netlify: `Sites` > `(choose site)` > `Site Settings` > `Build & deploy` > `Build settings`: Base directory = "Not set" ; Build command = "npm run build" ; Publish directory = "out/"
 - create a GitHub API token: `Settings` > `Developer Settings` (bottom left) > `Personal access tokens` (left side) > `Tokens` (classic) > `Generate new token` (copy the token to clipboard)
