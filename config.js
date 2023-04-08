@@ -17,9 +17,15 @@ module.exports = {
 	"prefer-cached-for": 12 * 60 * 60 * 1000,
 	// when min score is reached the addon will be removed / issue closed
 	"minimum-score": -10,
-	// optional label id, if available it will add a label when closing an issue due to low score, this id adds the label "very low score"
+	// when an addon is unreachable for 10 days, remove the submission
+	"maximum-unreachable": 10 * 24 * 60 * 60 * 1000,
+	// optional label id, if available it will add a label when closing an issue due to various reasons
 	// you can only get the label id through the github graphql api
-	"label-id-for-close-issues": "LA_kwDOFVUyTM8AAAABGbO_Bw",
+	"label-id-for-low-score": "LA_kwDOFVUyTM8AAAABGbO_Bw", // "very low score"
+	"label-id-for-duplicate": "LA_kwDOFVUyTM8AAAABP8VfgA", // "duplicate"
+	"label-id-for-invalid": "LA_kwDOFVUyTM8AAAABP8VmVQ", // "invalid addon url"
+	"label-id-for-inactive": "LA_kwDOFVUyTM8AAAABP8VsIw", // "addon inactive"
+	"label-id-for-unreachable": "LA_kwDOFVUyTM8AAAABP8Zl7g", // "addon manifest unreachable"
 	// sane timeouts for needle so it doesn't get stuck in a request
 	"needle": { "open_timeout": 5000, "response_timeout": 5000, "read_timeout": 5000, "follow_max": 5 },
 	// output folder for build
