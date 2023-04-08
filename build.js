@@ -103,7 +103,7 @@ getCached().then(cached => {
         const installButton = !(addonManifest.behaviorHints || {}).configurationRequire ? '<a class="addon-button install-button" href="'+task.url.replace('https://','stremio://')+'">Install</a> <a class="addon-button copy-link-button" href="#" onClick="copyLink(event, \''+task.url+'\')">Copy Link</a>' : ''
         const configButton = (addonManifest.behaviorHints || {}).configurable ? '<a class="addon-button configure-button" href="'+task.url.replace('/manifest.json','/configure')+'" target="_blank">Configure</a>' : ''
         const commentsButton = task.commentCount ? `<a href="${slug(addonManifest.name)}.html" class="addon-button last-addon-button"><ion-icon name="chatbubbles" class="gray-icon"></ion-icon> ${task.commentCount}</a>` : ''
-        const language = task.language && task.language !== 'Multilingual' ? `<div class="addon-language">${task.language} Content</div>` : ''
+        const language = task.language && task.language !== 'Multilingual' && task.language !== 'None' ? `<div class="addon-language">${task.language} Content</div>` : ''
         const addonsScoreFaded = !task.ups && !task.downs ? ' addon-score-faded' : ''
 
         const labelsForHomeHeader = task.labels.map(el => `<span class="label label-addon-page" style="background-color: #${el.color}">${el.name}</span>`).join('')
