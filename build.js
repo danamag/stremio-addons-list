@@ -77,6 +77,10 @@ getCached().then(cached => {
           cb()
           return
         }
+        if (addonManifest.name && addonManifest.name !== meta.name) {
+          console.log('warning: github issue name is different than addon name: ' + task.name)
+          graphql.updateTitleQueue.push({ postId: meta.postId, title: addonManifest.name })
+        }
         addons_collection.push({
           transportUrl: task.url,
           transportName: 'http',
