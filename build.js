@@ -176,8 +176,6 @@ getCached().then(cached => {
           addonManifest = body
           cached.lastReached[task.url] = Date.now()
         } else if (cached.catalog.length) {
-          // this could backfire in the case of rare updates and
-          // the addon being unreachable due to some fluke
           if (cached.lastReached[task.url] && Date.now() - cached.lastReached[task.url] > config['maximum-unreachable']) {
             rip = true
           } else {
