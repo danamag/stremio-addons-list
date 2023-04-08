@@ -22,9 +22,10 @@ getCached().then(cached => {
     // issues are ordered chronologically
     data.forEach(addon => {
       const meta = issueToMeta(addon)
-      if (meta) {
+      if (meta && meta.name && meta.url) {
         if (meta.score > config['minimum-score']) {
           if (noDups.includes(meta.url)) {
+            console.log('closing issue due to duplication: ' + meta.name)
             graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-duplicate'] })
             return
           }
@@ -35,9 +36,11 @@ getCached().then(cached => {
           })
           addons.push(meta)
         } else {
+          console.log('closing issue due to low score: ' + meta.name)
           graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-low-score'] })
         }
       } else {
+        console.log('closing issue due to submission being invalid: ' + meta.name)
         graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-invalid'] })
       }
     })
