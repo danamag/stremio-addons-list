@@ -23,9 +23,7 @@ getCached().then(cached => {
     data.forEach(addon => {
       const meta = issueToMeta(addon)
       if (meta) {
-        if (!meta.url) {
-          graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-invalid'] })
-        } else if (meta.score > config['minimum-score']) {
+        if (meta.score > config['minimum-score']) {
           if (noDups.includes(meta.url)) {
             graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-duplicate'] })
             return
@@ -39,6 +37,8 @@ getCached().then(cached => {
         } else {
           graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-low-score'] })
         }
+      } else {
+        graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-invalid'] })
       }
     })
 
