@@ -42,9 +42,11 @@ So here's how you can help:
 
 ## How it works
 
-When submitting an addon to the list, a github issue is created to represent this submission. If the original poster closes their issue, or someone with access to the project closes the issue, the addon will be removed from the list.
+When submitting an addon to the list, a github issue is created to represent this submission. If the original poster closes their issue, or someone with access to the project closes the issue, the addon will be removed from the list. If the project detects an invalid submission it will automatically close the issue and set an explanatory label for the reason.
 
 All addons in the list are ordered by the thumbs up / down votes of the github issues, if an addon has less than -10 votes it is removed from the list.
+
+If an addon manifest has been unreachable for more than 10 days, it will be removed from the list.
 
 Labels for addons are a 1:1 copy of github labels used for issues, the colors chosen for these labels on github will also be used on the site.
 
