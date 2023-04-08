@@ -18,17 +18,26 @@ getCached().then(cached => {
     const addons = []
     const addons_collection = []
     const all_labels = [{ color: 'A08C80', name: 'show all' }]
+    const noDups = []
+    // issues are ordered chronologically
     data.forEach(addon => {
       const meta = issueToMeta(addon)
       if (meta) {
-        if (meta.score > config['minimum-score']) {
+        if (!meta.url) {
+          graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-invalid'] })
+        } else if (meta.score > config['minimum-score']) {
+          if (noDups.includes(meta.url)) {
+            graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-duplicate'] })
+            return
+          }
+          noDups.push(meta.url)
           meta.labels.forEach(label => {
             if (label.name && !all_labels.some(el => label.name === el.name))
               all_labels.push(label)
           })
           addons.push(meta)
         } else {
-          graphql.closeIssueQueue.push({ postId: meta.postId })
+          graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-low-score'] })
         }
       }
     })
@@ -61,9 +70,10 @@ getCached().then(cached => {
     const newAddons = []
 
     const queue = asyncQueue((task, cb) => {
-      const processManifest = addonManifest => {
+      const processManifest = (addonManifest, meta, rip) => {
         if (!addonManifest) {
           console.log('warning: could not find addon manifest for: ' + task.name)
+          graphql.closeIssueQueue.push({ postId: meta.postId, label: rip ? config['label-id-for-inactive'] : config['label-id-for-unreachable'] })
           cb()
           return
         }
@@ -148,18 +158,26 @@ getCached().then(cached => {
       if (cached.prefer) {
         const cachedManifest = findCachedManifest()
         if (cachedManifest) {
-          processManifest(cachedManifest)
+          processManifest(cachedManifest, task)
           return
         }
       }
       needle.get(task.url, config.needle, (err, resp, body) => {
         let addonManifest
+        let rip
         if ((body || {}).id && body.version) {
           addonManifest = body
+          cached.lastReached[task.url] = Date.now()
         } else if (cached.catalog.length) {
-          addonManifest = findCachedManifest()
+          // this could backfire in the case of rare updates and
+          // the addon being unreachable due to some fluke
+          if (cached.lastReached[task.url] && Date.now() - cached.lastReached[task.url] > config['maximum-unreachable']) {
+            rip = true
+          } else {
+            addonManifest = findCachedManifest()
+          }
         }
-        processManifest(addonManifest)
+        processManifest(addonManifest, task, rip)
       })
     }, 1)
 
@@ -177,6 +195,8 @@ getCached().then(cached => {
       fs.copyFileSync('./resources/styles.css', `${dir}/styles.css`)
       console.log('creating addons catalog json file')
       fs.writeFileSync(`${dir}/catalog.json`, JSON.stringify(addons_collection))
+      console.log('creating last reached json file')
+      fs.writeFileSync(`${dir}/lastReached.json`, JSON.stringify(cached.lastReached))
       console.log('creating home page')
       // move "misc" label to end of list
       const miscLabelIndex = all_labels.findIndex(label => label.name === 'misc')
