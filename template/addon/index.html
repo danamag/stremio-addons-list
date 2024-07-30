@@ -102,10 +102,15 @@
             });
       })
       function copyLink(event, link) {
-          let copyLinkMsg = 'Copy Share Link to Clipboard: Ctrl+C, Enter\nPaste in the Search of the Stremio App'
-          if (window.isMobile)
-              copyLinkMsg = 'Copy Share Link to Clipboard: Long Press Text, Select Copy\nPaste in the Search of the Stremio App'
-          window.prompt(copyLinkMsg, link)
+        let copyLinkMsg = 'The link was copied to your clipboard\nPress Ctrl + V in the search bar of the Stremio app and press Enter'
+        if (window.isMobile)
+            copyLinkMsg = 'The link was copied to your clipboard\nPress and hold in the search bar of the Stremio app and select Paste'
+        navigator.clipboard.writeText(link).then(function() {
+            console.log('Link copied to clipboard');
+            }, function(err) {
+            console.error('Could not copy text: ', err);
+            });
+        window.alert(copyLinkMsg)
       }
   </script>
 </body>
