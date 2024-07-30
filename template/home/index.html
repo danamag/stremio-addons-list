@@ -121,7 +121,7 @@
         console.log('event', event)
         let copyLinkMsg = 'The link was copied to your clipboard\nPress Ctrl + V in the search bar of the Stremio app and press Enter'
         if (window.isMobile)
-            copyLinkMsg = 'The link was copied to your clipboard\nPress and hold in the search bar of the Stremio app and select Paste'
+            copyLinkMsg = 'The link was copied to your clipboard\nPress and hold in the search bar of the Stremio app, select Paste and press Enter'
         navigator.clipboard.writeText(link).then(function() {
             console.log('Link copied to clipboard');
             }, function(err) {
