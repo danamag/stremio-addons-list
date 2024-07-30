@@ -100,7 +100,7 @@ getCached().then(cached => {
         const lowerCaseName = addonManifest.name.toLowerCase()
         const keywordsForAddonPage = config['addon-keywords'].split('{}').join(lowerCaseName)
 
-        const installButton = !(addonManifest.behaviorHints || {}).configurationRequire ? '<a class="addon-button install-button" href="'+task.url.replace('https://','stremio://')+'">Install</a>  <a class="addon-button install-web-button" href="https://web.stremio.com/#/addons?addon='+task.url+'" target="_blank">Install (Web)</a>  <a class="addon-button copy-link-button" href="#" onClick="copyLink(\''+task.url+'\')">Copy Link</a>' : '';
+        const installButton = !(addonManifest.behaviorHints || {}).configurationRequire ? '<a class="addon-button install-button" href="'+task.url.replace('https://','stremio://')+'">Install</a>  <a class="addon-button install-web-button" href="https://web.stremio.com/#/addons?addon='+task.url+'" target="_blank">Install (Web)</a>  <a class="addon-button copy-link-button" href="#" onClick="copyLink(event, \''+task.url+'\')">Copy Link</a>' : '';
         const configButton = (addonManifest.behaviorHints || {}).configurable ? '<a class="addon-button configure-button" href="'+task.url.replace('/manifest.json','/configure')+'" target="_blank">Configure</a>' : ''
         const commentsButton = task.commentCount ? `<a href="${slug(addonManifest.name)}.html" class="addon-button last-addon-button"><ion-icon name="chatbubbles" class="gray-icon"></ion-icon> ${task.commentCount}</a>` : ''
         const language = task.language && task.language !== 'Multilingual' && task.language !== 'None' ? `<div class="addon-language">${task.language} Content</div>` : ''
