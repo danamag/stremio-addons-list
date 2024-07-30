@@ -108,6 +108,13 @@ h1 {
 .install-button:hover {
   opacity: 0.8;
 }
+.install-web-button {
+  background-color: #dc30ff;
+  color: #fff;
+}
+.install-web-button:hover {
+  opacity: 0.8;
+}
 .copy-link-button {
   background-color: #FFA030;
   color: #fff;
