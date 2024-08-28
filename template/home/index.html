@@ -117,19 +117,23 @@
           loadIsotope()
       })
       function copyLink(event, link) {
-        console.log('link', link)
-        console.log('event', event)
-        let copyLinkMsg = 'The link was copied to your clipboard\nPress Ctrl + V in the search bar of the Stremio app and press Enter'
-        if (window.isMobile)
-            copyLinkMsg = 'The link was copied to your clipboard\nPress and hold in the search bar of the Stremio app, select Paste and press Enter'
-        navigator.clipboard.writeText(link).then(function() {
+        console.log('link', link);
+        console.log('event', event);
+    
+        const copyLinkMsg = window.isMobile ? 'The link was copied to your clipboard.\nPress and hold in the search bar of the Stremio app, select Paste and press Enter.' : 'The link was copied to your clipboard.\nPress Ctrl + V in the search bar of the Stremio app and press Enter.';
+        const promptMsg = window.isMobile ? 'Copy the link below by pressing and holding on it and selecting Copy.\nThen press and hold in the search bar of the Stremio app, select Paste and press Enter.' : 'Copy the link below by selecting it and pressing Ctrl + C.\nThen, Press Ctrl + V in the search bar of the Stremio app and press Enter.';
+    
+        navigator.clipboard.writeText(link).then(() => {
             console.log('Link copied to clipboard');
-            }, function(err) {
+            window.alert(copyLinkMsg);
+        }).catch(err => {
             console.error('Could not copy text: ', err);
-            });
-        window.alert(copyLinkMsg)
-        event.preventDefault()
-        return false
+            console.log('Fallback to prompt');
+            window.prompt(promptMsg, link);
+        });
+
+        event.preventDefault();
+        return false;
       }
   </script>
 </body>
