@@ -116,6 +116,9 @@
             console.log('Fallback to prompt');
             window.prompt(promptMsg, link);
         });
+
+        event.preventDefault();
+        return false;
       }
   </script>
 </body>
