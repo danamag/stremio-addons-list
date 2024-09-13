@@ -39,6 +39,29 @@ So here's how you can help:
 - show comment count for each addon in the list
 - Discord chat notifications for new addon releases
 
+## Addon Submission Rules
+
+We do not tolerate any abuse or misuse of user-submitted addons. The following behaviors are strictly prohibited:
+
+1. **Prohibited Content**  
+   Users must not submit:
+   - Abusive, harassing, discriminatory, or threatening content.
+   - Defamatory, false, or harmful material.
+   - Malicious code, ads, viruses, or any form of malware.
+   - Content promoting illegal activities.
+
+2. **Prohibited Actions**  
+   - Impersonating others or submitting misleading information.
+   - Engaging in spamming, phishing, or fraud.
+   - Attempting to bypass security or moderation measures.
+
+3. **Consequences**  
+   Violation of the terms above will result in your addon being removed and unpublished from this repository. Multiple violations may result in a permanent ban. Our moderation team reserves the right to remove you from other community-moderated platforms such as (but not limited to) our Reddit and Discord communities.
+
+4. **Reporting**  
+   Please contact a moderator to report any abusive or harmful content, including suspected malware. We will take appropriate action. 
+
+*By submitting an addon to this repository, you automatically agree to the terms above.*
 
 ## How it works
 
