@@ -8,7 +8,7 @@ const getCached = require('./lib/cache')
 const processHtml = require('./lib/html')
 const issueToMeta = require('./lib/issueToMeta')
 const sendDiscordMessage = require('./lib/discord')
-const blockedPublishers = require('./blocked_publishers.json')
+const blocked = require('./blocked.json')
 
 getCached().then(cached => {
   if (cached.time && cached.time > Date.now() - config['prefer-cached-for']) {
@@ -24,15 +24,15 @@ getCached().then(cached => {
     data.forEach(addon => {
       const meta = issueToMeta(addon)
 
-      // don't allow addons from blocked publishers
-      const publisher = (addon.author || {}).login
-      if (publisher && blockedPublishers.includes(publisher)) {
-        console.log('closing issue due to blocked publisher: ' + publisher)
-        graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-blocked'] })
-        return
-      }
-
       if (meta && meta.name && meta.url) {
+        // don't allow addons from blocked publishers
+        const publisher = (addon.author || {}).login
+        if (publisher && blocked.publishers.includes(publisher) || blocked.domains.some(domain => meta.url.includes(domain))) {
+          console.log('closing issue due to blocked publisher or domain. Publisher: ' + publisher)
+          graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-blocked'] })
+          return
+        }
+
         if (meta.score > config['minimum-score']) {
           if (noDups.includes(meta.url)) {
             console.log('closing issue due to duplication: ' + meta.name)
