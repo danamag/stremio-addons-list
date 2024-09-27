@@ -23,7 +23,7 @@ So here's how you can help:
 
 ## Project Features
 
-- anyone can publish an addon (except [blocked publishers](./blocked_publishers.json), see our [addon submission rules](#addon-submission-rules) below)
+- anyone can publish an addon (except [blocked publishers](./blocked.json), see our [addon submission rules](#addon-submission-rules) below)
 - publishers can choose labels
 - publishers can choose content language (if applicable)
 - everyone can vote on addons
