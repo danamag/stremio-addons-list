@@ -26,7 +26,6 @@ module.exports = {
 	"label-id-for-invalid": "LA_kwDOFVUyTM8AAAABP8VmVQ", // "invalid addon url"
 	"label-id-for-inactive": "LA_kwDOFVUyTM8AAAABP8VsIw", // "addon inactive"
 	"label-id-for-unreachable": "LA_kwDOFVUyTM8AAAABP8Zl7g", // "addon manifest unreachable"
-	"label-id-for-blocked": "LA_kwDOFVUyTM8AAAABwFFFQA", // "addon blocked"
 	// sane timeouts for needle so it doesn't get stuck in a request
 	"needle": { "open_timeout": 5000, "response_timeout": 5000, "read_timeout": 5000, "follow_max": 5 },
 	// output folder for build
