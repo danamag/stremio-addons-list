@@ -35,7 +35,6 @@ getCached().then(cached => {
             graphql.syncLabelsQueue.push({ postId: meta.postId, proposedLabels: ['approved'], allLabels: [{ name: 'approved', id: config['label-id-approved'] }] })
           } else {
             console.log(`skipping unapproved addon '${meta.name}'`)
-            console.log(meta.labels)
           }
 
           return
