@@ -8,6 +8,7 @@ const getCached = require('./lib/cache')
 const processHtml = require('./lib/html')
 const issueToMeta = require('./lib/issueToMeta')
 const sendDiscordMessage = require('./lib/discord')
+const trustedPublishers = require('./trusted_publishers.json')
 
 getCached().then(cached => {
   if (cached.time && cached.time > Date.now() - config['prefer-cached-for']) {
@@ -22,7 +23,20 @@ getCached().then(cached => {
     // issues are ordered chronologically
     data.forEach(addon => {
       const meta = issueToMeta(addon)
+
       if (meta && meta.name && meta.url) {
+        // skip addons that are not approved (yet) by our moderators
+        if (!(meta.labels ?? []).some(label => label.id === config['label-id-approved'])) {
+          const publisher = (addon.author || {}).login
+
+          // automatically approve addons from trusted publishers
+          if (publisher && trustedPublishers.includes(publisher)) {
+            graphql.syncLabelsQueue.push({ postId: meta.postId, proposedLabels: ['approved'], allLabels: [{ name: 'approved', id: config['label-id-approved'] }] })
+          }
+
+          return
+        }
+        
         if (meta.score > config['minimum-score']) {
           if (noDups.includes(meta.url)) {
             console.log('closing issue due to duplication: ' + meta.name)
@@ -48,18 +62,20 @@ getCached().then(cached => {
     // ensure that labels are the same as proposed by user submitting
     addons.forEach(addon => {
       if (addon.postId && addon.proposedLabels.length) {
+        const addonLabelNames = addon.labels.map(label => label.name)
 
-        // we only sync labels on new issues, that only have the default "misc" label set
-        if (addon.labels.length === 1 && addon.labels[0].name === 'misc') {}
-        else return
+        // we only sync labels on approved issues
+        if (!addonLabelNames.includes('approved')) {
+          return
+        }
 
-        const diff = addon.proposedLabels.filter(x => !addon.labels.map(label => label.name).includes(x))
+        const diff = addon.proposedLabels.filter(x => !addonLabelNames.includes(x))
 
         if (diff.length) {
           // proposed labels are different than issue labels
-          console.log('setting initial labels for: ' + addon.name)
+          console.log('syncing labels for: ' + addon.name)
           console.log(addon.proposedLabels)
-          graphql.syncLabelsQueue.push({ postId: addon.postId, proposedLabels: addon.proposedLabels, allLabels: all_labels })
+          graphql.syncLabelsQueue.push({ postId: addon.postId, proposedLabels: ['approved', ...addon.proposedLabels], allLabels: all_labels })
         }
 
       }

@@ -1,7 +1,7 @@
 name: Publish Stremio Addon
 description: Submit a new Stremio Addon to the Unofficial Stremio Addons List
 title: "Addon Name"
-labels: ["misc"]
+labels: ["pending approval"]
 body:
   - type: markdown
     attributes:
