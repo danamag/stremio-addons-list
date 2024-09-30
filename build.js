@@ -224,6 +224,7 @@ getCached().then(cached => {
       const miscLabelIndex = all_labels.findIndex(label => label.name === 'misc')
       if (miscLabelIndex > -1)
         all_labels.push(all_labels.splice(miscLabelIndex, 1)[0])
+      all_labels.pop('approved') // remove "approved" label from list
       const map = {
         '{home-keywords}': config['meta-keywords'],
         '{home-page-title}': config['page-title'],
@@ -232,7 +233,7 @@ getCached().then(cached => {
         '{home-favicon}': config['meta-favicon'],
         '{home-description}': config['meta-description'],
         '{repo-name}': config.author+'/'+config.repository,
-        '{labels-list}': all_labels.filter(label => label.name !== "approved").map((el, ij) => `<span class="label${!ij ? ' selected' : ''}" style="background-color: #${el.color}">${el.name}</span>`).join(''),
+        '{labels-list}': all_labels.map((el, ij) => `<span class="label${!ij ? ' selected' : ''}" style="background-color: #${el.color}">${el.name}</span>`).join(''),
         '{addons-list}': listHtml.join(''),
       }
       const homePage = processHtml('homePage', map)
