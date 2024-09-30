@@ -31,7 +31,10 @@ getCached().then(cached => {
 
           // automatically approve addons from trusted publishers
           if (publisher && trustedPublishers.includes(publisher)) {
+            console.log(`approving addon '${meta.name}' from trusted publisher '${publisher}'`)
             graphql.syncLabelsQueue.push({ postId: meta.postId, proposedLabels: ['approved'], allLabels: [{ name: 'approved', id: config['label-id-approved'] }] })
+          } else {
+            console.log(`skipping unapproved addon '${meta.name}'`)
           }
 
           return
@@ -66,6 +69,7 @@ getCached().then(cached => {
 
         // we only sync labels on approved issues
         if (!addonLabelNames.includes('approved')) {
+          console.log(`skipping label sync for unapproved addon '${addon.name}'`)
           return
         }
 
