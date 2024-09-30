@@ -8,7 +8,7 @@ const getCached = require('./lib/cache')
 const processHtml = require('./lib/html')
 const issueToMeta = require('./lib/issueToMeta')
 const sendDiscordMessage = require('./lib/discord')
-const blocked = require('./blocked.json')
+const trustedPublishers = require('./trusted_publishers.json')
 
 getCached().then(cached => {
   if (cached.time && cached.time > Date.now() - config['prefer-cached-for']) {
@@ -25,14 +25,21 @@ getCached().then(cached => {
       const meta = issueToMeta(addon)
 
       if (meta && meta.name && meta.url) {
-        // don't allow addons from blocked publishers
-        const publisher = (addon.author || {}).login
-        if (publisher && blocked.publishers.includes(publisher) || blocked.domains.some(domain => meta.url.includes(domain))) {
-          console.log('closing issue due to blocked publisher or domain. Publisher: ' + publisher)
-          graphql.closeIssueQueue.push({ postId: meta.postId, label: config['label-id-for-blocked'] })
+        // skip addons that are not approved (yet) by our moderators
+        if (!(meta.labels ?? []).some(label => label.id === config['label-id-approved'])) {
+          const publisher = (addon.author || {}).login
+
+          // automatically approve addons from trusted publishers
+          if (publisher && trustedPublishers.includes(publisher)) {
+            console.log(`approving addon '${meta.name}' from trusted publisher '${publisher}'`)
+            graphql.syncLabelsQueue.push({ postId: meta.postId, proposedLabels: ['approved'], allLabels: [{ name: 'approved', id: config['label-id-approved'] }] })
+          } else {
+            console.log(`skipping unapproved addon '${meta.name}'`)
+          }
+
           return
         }
-
+        
         if (meta.score > config['minimum-score']) {
           if (noDups.includes(meta.url)) {
             console.log('closing issue due to duplication: ' + meta.name)
@@ -58,18 +65,21 @@ getCached().then(cached => {
     // ensure that labels are the same as proposed by user submitting
     addons.forEach(addon => {
       if (addon.postId && addon.proposedLabels.length) {
+        const addonLabelNames = addon.labels.map(label => label.name)
 
-        // we only sync labels on new issues, that only have the default "misc" label set
-        if (addon.labels.length === 1 && addon.labels[0].name === 'misc') {}
-        else return
+        // we only sync labels on approved issues
+        if (!addonLabelNames.includes('approved')) {
+          console.log(`skipping label sync for unapproved addon '${addon.name}'`)
+          return
+        }
 
-        const diff = addon.proposedLabels.filter(x => !addon.labels.map(label => label.name).includes(x))
+        const diff = addon.proposedLabels.filter(x => !addonLabelNames.includes(x))
 
         if (diff.length) {
           // proposed labels are different than issue labels
-          console.log('setting initial labels for: ' + addon.name)
+          console.log('syncing labels for: ' + addon.name)
           console.log(addon.proposedLabels)
-          graphql.syncLabelsQueue.push({ postId: addon.postId, proposedLabels: addon.proposedLabels, allLabels: all_labels })
+          graphql.syncLabelsQueue.push({ postId: addon.postId, proposedLabels: ['approved', ...addon.proposedLabels], allLabels: all_labels })
         }
 
       }
@@ -104,6 +114,7 @@ getCached().then(cached => {
           newAddons.push(task)
         }
         
+        task.labels.pop('approved') // we shouldn't show the "approved" label on the addon page
         let labelsHtml = task.labels.map(el => el.name.split(' ').join('-')).join(' ')
         if (labelsHtml) labelsHtml = ' ' + labelsHtml
 
@@ -225,7 +236,7 @@ getCached().then(cached => {
         '{home-favicon}': config['meta-favicon'],
         '{home-description}': config['meta-description'],
         '{repo-name}': config.author+'/'+config.repository,
-        '{labels-list}': all_labels.map((el, ij) => `<span class="label${!ij ? ' selected' : ''}" style="background-color: #${el.color}">${el.name}</span>`).join(''),
+        '{labels-list}': all_labels.filter(label => label.name !== "approved").map((el, ij) => `<span class="label${!ij ? ' selected' : ''}" style="background-color: #${el.color}">${el.name}</span>`).join(''),
         '{addons-list}': listHtml.join(''),
       }
       const homePage = processHtml('homePage', map)
