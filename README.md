@@ -1,4 +1,6 @@
 # The Great List of Stremio Addons
+> [!NOTE]  
+> Due to recent abuse of this repository (malicious addons, spam) by a user called [vancengvn](https://github.com/Vance-ng-vn) we were forced to implement a moderation system. New addon submissions now need explicit approval from a contributor to be published - unless you are on the [trusted publishers](./trusted_publishers.json) list. Please contact a moderator on Discord or Reddit if your addon hasn't been approved after 7 days.
 
 To see the great list of Stremio Addons go to [the website](https://stremio-addons.netlify.app/).
 
@@ -10,8 +12,6 @@ To comment on an addon, find it in [the issues](https://github.com/danamag/strem
 
 To get notifications about new addons press the "Watch" button at the top right of this page. (or [join the Discord](https://discord.gg/zNRf6YF), all new addons are announced on the #bots channel)
 
-> [!NOTE]  
-> Due to recent abuse of this repository (malicious addons, spam) by a user called [vancengvn](https://github.com/Vance-ng-vn) we were forced to implement a moderation system. New addon submissions now need explicit approval from a contributor to be published - unless you are on the [trusted publishers](./trusted_publishers.json) list. Please contact a moderator on Discord or Reddit if your addon hasn't been approved after 7 days.
 
 ## How Can I Help?
 
