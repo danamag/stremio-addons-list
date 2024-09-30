@@ -110,6 +110,7 @@ getCached().then(cached => {
           newAddons.push(task)
         }
         
+        task.labels = task.labels.pop('approved') // we shouldn't show the "approved" label on the addon page
         let labelsHtml = task.labels.map(el => el.name.split(' ').join('-')).join(' ')
         if (labelsHtml) labelsHtml = ' ' + labelsHtml
 
