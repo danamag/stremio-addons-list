@@ -1,5 +1,5 @@
 const fs = require('fs')
-const slug = require('slug')
+const slug = require('./lib/slug')
 const needle = require('needle')
 const asyncQueue = require('async.queue')
 const config = require('./config')
