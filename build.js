@@ -220,7 +220,7 @@ getCached().then(cached => {
       })
       fs.copyFileSync('./resources/styles.css', `${dir}/styles.css`)
 
-      const manifest = {
+      onst manifest = {
         id: 'app.netlify.stremio-addons',
         version: '1.0.0',
         name: 'Stremio Community Addons List',
@@ -237,6 +237,7 @@ getCached().then(cached => {
       fs.writeFileSync(`${dir}/manifest.json`, JSON.stringify(manifest))
 
       console.log('creating addon_catalog file')
+      fs.mkdirSync(`${dir}/addon_catalog/all`, { recursive: true });
       fs.writeFileSync(`${dir}/addon_catalog/all/community.json`, JSON.stringify(addons_collection))
 
       console.log('creating addons catalog json file')
