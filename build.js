@@ -238,7 +238,9 @@ getCached().then(cached => {
 
       console.log('creating addon_catalog file')
       fs.mkdirSync(`${dir}/addon_catalog/all`, { recursive: true });
-      fs.writeFileSync(`${dir}/addon_catalog/all/community.json`, JSON.stringify(addons_collection))
+      fs.writeFileSync(`${dir}/addon_catalog/all/community.json`, JSON.stringify({
+        addons: addons_collection
+      }))
 
       console.log('creating addons catalog json file')
       fs.writeFileSync(`${dir}/catalog.json`, JSON.stringify(addons_collection))
