@@ -219,10 +219,35 @@ getCached().then(cached => {
         }
       })
       fs.copyFileSync('./resources/styles.css', `${dir}/styles.css`)
+
+      const manifest = {
+        id: 'community.stremio.stremio-addons-list',
+        version: '1.0.0',
+        name: 'Stremio Community Addons List',
+        description: 'Stremio Community Addons List',
+        resources: ['addon_catalog'],
+        addonCatalogs: [{
+          type: 'all',
+          id: 'community',
+          name: 'Community',
+        }],
+      };
+
+      console.log('creating manifest file')
+      fs.writeFileSync(`${dir}/manifest.json`, JSON.stringify(manifest))
+
+      console.log('creating addon_catalog file')
+      fs.mkdirSync(`${dir}/addon_catalog/all`, { recursive: true });
+      fs.writeFileSync(`${dir}/addon_catalog/all/community.json`, JSON.stringify({
+        addons: addons_collection
+      }))
+
       console.log('creating addons catalog json file')
       fs.writeFileSync(`${dir}/catalog.json`, JSON.stringify(addons_collection))
+
       console.log('creating last reached json file')
       fs.writeFileSync(`${dir}/lastReached.json`, JSON.stringify(cached.lastReached))
+
       console.log('creating home page')
       // move "misc" label to end of list
       const miscLabelIndex = all_labels.findIndex(label => label.name === 'misc')
