@@ -221,7 +221,7 @@ getCached().then(cached => {
       fs.copyFileSync('./resources/styles.css', `${dir}/styles.css`)
 
       const manifest = {
-        id: 'app.netlify.stremio-addons',
+        id: 'community.stremio.stremio-addons-list',
         version: '1.0.0',
         name: 'Stremio Community Addons List',
         description: 'Stremio Community Addons List',
